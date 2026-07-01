@@ -3,477 +3,634 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manapos - Modern POS System</title>
+  <title>Manapos - Sistem POS Modern untuk Bisnis Anda</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
     
-    * { 
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
+    * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
     
     body {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
+      background: #ffffff;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
     }
     
-    /* Animated gradient background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    /* Subtle gradient hero background */
+    .hero-bg {
       background: 
-        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.3), transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(56, 189, 248, 0.3), transparent 50%);
-      animation: gradient-shift 15s ease infinite;
-      z-index: 0;
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 58, 237, 0.12), transparent),
+        radial-gradient(ellipse 60% 50% at 80% 0%, rgba(236, 72, 153, 0.08), transparent),
+        #ffffff;
     }
-    
-    @keyframes gradient-shift {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
-    }
-    
-    .content-wrapper {
-      position: relative;
-      z-index: 1;
-    }
-    
-    /* Glassmorphism dengan vendor prefixes */
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px) saturate(180%);
-      -webkit-backdrop-filter: blur(10px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .glass:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-      transform: translateY(-4px);
-    }
-    
-    .glass-white {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Text colors for contrast */
-    .text-primary { color: #1e293b; }
-    .text-secondary { color: #475569; }
-    .text-white { color: #ffffff; }
     
     /* Gradient text */
     .gradient-text {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(90deg, #7c3aed 0%, #ec4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
+    .gradient-text-blue {
+      background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Card style — DataPulse spec */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+    }
+    
     /* Button styles */
     .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 12px;
+      background: #10b981;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
       border: none;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
     }
     
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+      background: #059669;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
     }
     
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 12px;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 12px 20px;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 16px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      font-size: 15px;
+      border: 1px solid #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
     
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.3);
-      border-color: rgba(255, 255, 255, 0.5);
+      background: #0f172a;
+      color: #ffffff;
     }
     
-    /* Icon boxes */
-    .icon-box {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      display: flex;
+    .btn-ghost {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-ghost:hover {
+      background: #e2e8f0;
+    }
+    
+    .btn-purple {
+      background: #8b5cf6;
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-purple:hover {
+      background: #7c3aed;
+    }
+    
+    /* Icon circle */
+    .icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      color: white;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      font-size: 22px;
+      color: #ffffff;
     }
     
-    /* Feature cards */
-    .feature-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 20px;
-      padding: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      transition: all 0.3s ease;
+    /* Pill / badge */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
     }
     
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+    .pill-green {
+      background: #d1fae5;
+      color: #047857;
     }
     
-    /* Responsive */
+    .pill-purple {
+      background: #f3e8ff;
+      color: #7c3aed;
+    }
+    
+    /* CTA gradient */
+    .cta-gradient {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-gradient::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    
+    /* Mini chart bar */
+    .chart-bar {
+      background: linear-gradient(180deg, #3b82f6 0%, rgba(59,130,246,0.2) 100%);
+      border-radius: 4px 4px 0 0;
+    }
+    
+    /* Section padding */
+    .section {
+      padding: 80px 0;
+    }
+    
     @media (max-width: 768px) {
-      .btn-primary, .btn-secondary {
-        padding: 12px 24px;
-        font-size: 14px;
-      }
+      .section { padding: 48px 0; }
     }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <!-- Navigation -->
-    <nav class="glass fixed top-0 left-0 right-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-            M
-          </div>
-          <span class="text-xl font-bold text-white">Manapos</span>
-        </div>
-        
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#features" class="text-white hover:text-white/80 font-500 transition">Fitur</a>
-          <a href="#pricing" class="text-white hover:text-white/80 font-500 transition">Harga</a>
-          <a href="#faq" class="text-white hover:text-white/80 font-500 transition">FAQ</a>
-          <button class="bg-white text-purple-600 px-6 py-2 rounded-lg font-600 hover:shadow-lg transition">
-            Coba Gratis
-          </button>
-        </div>
-        
-        <button class="md:hidden text-white text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4">
-      <div class="max-w-7xl mx-auto text-center">
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-900 text-white mb-6 leading-tight">
-          Sistem POS <span class="text-white opacity-90">Modern</span><br/>untuk Bisnis Anda
-        </h1>
-        <p class="text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Kelola inventory, transaksi, dan laporan dengan mudah. Dirancang untuk retail, F&B, dan bisnis service.
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">M</div>
+        <span class="text-lg font-bold text-slate-900">Manapos</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#fitur" class="hover:text-slate-900 transition">Fitur</a>
+        <a href="#dashboard" class="hover:text-slate-900 transition">Dashboard</a>
+        <a href="#harga" class="hover:text-slate-900 transition">Harga</a>
+        <a href="#" class="hover:text-slate-900 transition">Resources</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Sign In</a>
+        <a href="#" class="btn-primary text-sm">Coba Gratis <i class="fas fa-arrow-right text-xs"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg section">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <div class="inline-flex mb-6">
+        <span class="pill pill-green">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+          Real-time POS System
+        </span>
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.05] mb-6">
+        Transform Bisnis Anda<br/>Menjadi <span class="gradient-text">Modern & Cerdas</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Sistem POS cloud-based yang membantu Anda kelola penjualan, inventory, dan laporan bisnis secara real-time. Dirancang untuk retail, F&B, dan service.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+        <a href="#" class="btn-primary">Mulai Gratis 14 Hari <i class="fas fa-arrow-right text-xs"></i></a>
+        <a href="#" class="btn-ghost"><i class="fas fa-play text-xs"></i> Lihat Demo</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto">
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900">500+</div>
+          <div class="text-sm text-slate-500 mt-1">Pengguna Aktif</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900">99.9%</div>
+          <div class="text-sm text-slate-500 mt-1">Uptime</div>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-extrabold text-slate-900">50M+</div>
+          <div class="text-sm text-slate-500 mt-1">Transaksi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="fitur" class="section">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          Semua yang Anda <span class="gradient-text">Butuhkan</span>
+        </h2>
+        <p class="text-lg text-slate-600">
+          Fitur powerful untuk kelola bisnis retail, F&B, dan service dengan efisien.
         </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <button class="btn-primary">
-            Mulai Gratis 14 Hari
-          </button>
-          <button class="btn-secondary">
-            Lihat Demo
-          </button>
-        </div>
-        
-        <!-- Stats Card -->
-        <div class="glass-white rounded-3xl p-8 sm:p-12 max-w-4xl mx-auto">
-          <div class="grid grid-cols-3 gap-6 sm:gap-12">
-            <div class="text-center">
-              <div class="text-4xl sm:text-5xl font-900 gradient-text mb-2">500+</div>
-              <div class="text-sm sm:text-base text-secondary font-500">Pengguna Aktif</div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl sm:text-5xl font-900 gradient-text mb-2">99.9%</div>
-              <div class="text-sm sm:text-base text-secondary font-500">Uptime</div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl sm:text-5xl font-900 gradient-text mb-2">24/7</div>
-              <div class="text-sm sm:text-base text-secondary font-500">Support</div>
-            </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">
+            <i class="fas fa-cash-register"></i>
           </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Penjualan Real-time</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Checkout cepat dengan UI intuitif, multi payment method, dan receipt digital terintegrasi.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">
+            <i class="fas fa-boxes-stacked"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Inventory Pintar</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Lacak stok real-time, notifikasi low stock otomatis, dan laporan inventory lengkap.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background: linear-gradient(135deg, #10b981, #14b8a6);">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Analytics & Laporan</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Dashboard real-time dengan insights penjualan, trending produk, dan forecasting akurat.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+            <i class="fas fa-users-gear"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Multi-User & Role</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Kelola permission karyawan, track aktivitas, dan audit trail untuk setiap transaksi.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Keamanan Enterprise</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Enkripsi end-to-end, backup otomatis, dan compliance SOC 2 certified.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Cloud-Based</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Akses dari mana saja, sync multi-device, dan infrastruktur global yang reliable.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl font-800 text-white mb-4">Fitur Unggulan</h2>
-          <p class="text-lg text-white/80 max-w-2xl mx-auto">Semua yang Anda butuhkan untuk menjalankan bisnis dengan efisien</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="feature-card">
-            <div class="icon-box mb-6" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-              <i class="fas fa-shopping-cart"></i>
-            </div>
-            <h3 class="text-xl font-700 text-primary mb-3">Manajemen Penjualan</h3>
-            <p class="text-secondary leading-relaxed">Checkout cepat dengan UI intuitif, multiple payment methods, dan receipt digital.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="icon-box mb-6" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-              <i class="fas fa-boxes"></i>
-            </div>
-            <h3 class="text-xl font-700 text-primary mb-3">Inventory Real-time</h3>
-            <p class="text-secondary leading-relaxed">Lacak stok secara real-time, notifikasi low stock otomatis, dan laporan lengkap.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="icon-box mb-6" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-              <i class="fas fa-chart-bar"></i>
-            </div>
-            <h3 class="text-xl font-700 text-primary mb-3">Laporan & Analytics</h3>
-            <p class="text-secondary leading-relaxed">Dashboard real-time dengan insights penjualan dan trending produk.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="icon-box mb-6" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3 class="text-xl font-700 text-primary mb-3">Multi-User & Roles</h3>
-            <p class="text-secondary leading-relaxed">Kelola permission karyawan, track aktivitas, dan audit trail.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="icon-box mb-6" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-              <i class="fas fa-lock"></i>
-            </div>
-            <h3 class="text-xl font-700 text-primary mb-3">Keamanan Enterprise</h3>
-            <p class="text-secondary leading-relaxed">Enkripsi end-to-end, backup otomatis, dan compliance standar.</p>
-          </div>
-          
-          <div class="feature-card">
-            <div class="icon-box mb-6" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <h3 class="text-xl font-700 text-primary mb-3">Cloud-Based</h3>
-            <p class="text-secondary leading-relaxed">Akses dari mana saja, sync otomatis multi-device.</p>
-          </div>
-        </div>
+  <!-- Dashboard Preview Section -->
+  <section id="dashboard" class="section bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          Visualisasi Data <span class="gradient-text-blue">yang Indah</span>
+        </h2>
+        <p class="text-lg text-slate-600">
+          Dashboard interaktif, widget customizable, dan update real-time dalam satu tempat.
+        </p>
       </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl font-800 text-white mb-4">Harga Transparan</h2>
-          <p class="text-lg text-white/80 max-w-2xl mx-auto">Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div class="feature-card">
-            <h3 class="text-2xl font-700 text-primary mb-4">Starter</h3>
-            <div class="mb-6">
-              <span class="text-5xl font-800 text-primary">Rp 299k</span>
-              <span class="text-secondary ml-2">/bulan</span>
-            </div>
-            <p class="text-secondary mb-8">Untuk bisnis kecil dengan 1 outlet</p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Penjualan & Inventory
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Laporan Dasar
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> 2 User
-              </li>
-            </ul>
-            <button class="w-full py-3 rounded-xl font-600 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 transition">
-              Pilih Paket
-            </button>
-          </div>
-          
-          <div class="feature-card ring-2 ring-purple-500 relative">
-            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-600">
-                🌟 Paling Populer
-              </span>
-            </div>
-            <h3 class="text-2xl font-700 text-primary mb-4 mt-2">Pro</h3>
-            <div class="mb-6">
-              <span class="text-5xl font-800 text-primary">Rp 699k</span>
-              <span class="text-secondary ml-2">/bulan</span>
-            </div>
-            <p class="text-secondary mb-8">Untuk bisnis dengan 1-3 outlet</p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Semua fitur Starter
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Multi-outlet (max 3)
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Analytics Premium
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Payment Gateway
-              </li>
-            </ul>
-            <button class="w-full btn-primary">
-              Mulai Gratis 14 Hari
-            </button>
-          </div>
-          
-          <div class="feature-card">
-            <h3 class="text-2xl font-700 text-primary mb-4">Enterprise</h3>
-            <div class="mb-6">
-              <span class="text-5xl font-800 text-primary">Custom</span>
-            </div>
-            <p class="text-secondary mb-8">Untuk bisnis besar dengan kebutuhan khusus</p>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Semua fitur Pro
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Unlimited Outlet
-              </li>
-              <li class="flex items-center gap-3 text-primary">
-                <i class="fas fa-check text-green-500 font-700"></i> Dedicated Support
-              </li>
-            </ul>
-            <button class="w-full py-3 rounded-xl font-600 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 transition">
-              Hubungi Sales
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 px-4">
-      <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl font-800 text-white mb-4">Pertanyaan Umum</h2>
-          <p class="text-lg text-white/80">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
-        </div>
-        
-        <div class="space-y-4">
-          <details class="feature-card cursor-pointer">
-            <summary class="flex items-center justify-between font-600 text-primary">
-              <span>Apakah ada trial gratis?</span>
-              <i class="fas fa-chevron-down"></i>
-            </summary>
-            <p class="text-secondary mt-4 leading-relaxed">Ya, Anda bisa mencoba paket Pro secara gratis selama 14 hari tanpa perlu kartu kredit.</p>
-          </details>
-          
-          <details class="feature-card cursor-pointer">
-            <summary class="flex items-center justify-between font-600 text-primary">
-              <span>Apakah data saya aman?</span>
-              <i class="fas fa-chevron-down"></i>
-            </summary>
-            <p class="text-secondary mt-4 leading-relaxed">Data dienkripsi end-to-end dengan backup harian. Kami mengikuti standar ISO 27001.</p>
-          </details>
-          
-          <details class="feature-card cursor-pointer">
-            <summary class="flex items-center justify-between font-600 text-primary">
-              <span>Bisa integrasi dengan payment gateway?</span>
-              <i class="fas fa-chevron-down"></i>
-            </summary>
-            <p class="text-secondary mt-4 leading-relaxed">Ya, kami support Xendit, Midtrans, Duitku, dan berbagai gateway lokal lainnya.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 px-4">
-      <div class="max-w-4xl mx-auto glass-white rounded-3xl p-12 text-center">
-        <h2 class="text-4xl sm:text-5xl font-800 text-primary mb-6">Siap Transformasi Bisnis Anda?</h2>
-        <p class="text-xl text-secondary mb-10 leading-relaxed">Mulai gratis 14 hari, tanpa kartu kredit. Setup dalam hitungan menit.</p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="btn-primary">
-            Mulai Sekarang
-          </button>
-          <button class="btn-secondary">
-            Jadwalkan Demo
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="glass text-white py-12 px-4 border-t border-white/20">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <!-- Dashboard Mockup -->
+      <div class="card p-6 sm:p-8 max-w-5xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
           <div>
-            <div class="flex items-center gap-2 mb-6">
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                M
+            <h3 class="text-lg font-bold text-slate-900">Analytics Overview</h3>
+            <p class="text-sm text-slate-500">Performa 30 hari terakhir</p>
+          </div>
+          <div class="flex gap-2">
+            <button class="btn-secondary text-sm py-2 px-4">Export</button>
+            <button class="btn-purple"><i class="fas fa-sliders text-xs"></i> Customize</button>
+          </div>
+        </div>
+
+        <!-- KPI cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div class="border border-gray-200 rounded-xl p-4">
+            <div class="text-xs text-slate-500 mb-1">Total Revenue</div>
+            <div class="text-2xl font-bold text-slate-900">Rp 124,5jt</div>
+            <div class="text-xs text-emerald-600 font-semibold mt-1">▲ +12.5%</div>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-4">
+            <div class="text-xs text-slate-500 mb-1">Transaksi</div>
+            <div class="text-2xl font-bold text-slate-900">8,549</div>
+            <div class="text-xs text-emerald-600 font-semibold mt-1">▲ +8.2%</div>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-4">
+            <div class="text-xs text-slate-500 mb-1">Conversion</div>
+            <div class="text-2xl font-bold text-slate-900">3.24%</div>
+            <div class="text-xs text-red-600 font-semibold mt-1">▼ -0.4%</div>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-4">
+            <div class="text-xs text-slate-500 mb-1">Avg. Session</div>
+            <div class="text-2xl font-bold text-slate-900">4m 32s</div>
+            <div class="text-xs text-emerald-600 font-semibold mt-1">▲ +15.3%</div>
+          </div>
+        </div>
+
+        <!-- Chart + Side widgets -->
+        <div class="grid lg:grid-cols-3 gap-6">
+          <!-- Area chart -->
+          <div class="lg:col-span-2 border border-gray-200 rounded-xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-bold text-slate-900">Revenue Trend</h4>
+              <div class="flex gap-3 text-xs">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Revenue</span>
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-400"></span> Expenses</span>
               </div>
-              <span class="font-bold text-lg">Manapos</span>
             </div>
-            <p class="text-white/70">Sistem POS modern untuk retail, F&B, dan bisnis service.</p>
+            <!-- SVG area chart -->
+            <svg viewBox="0 0 600 200" class="w-full h-48">
+              <defs>
+                <linearGradient id="blueGrad" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="purpleGrad" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- Grid lines -->
+              <line x1="0" y1="50" x2="600" y2="50" stroke="#f1f5f9"/>
+              <line x1="0" y1="100" x2="600" y2="100" stroke="#f1f5f9"/>
+              <line x1="0" y1="150" x2="600" y2="150" stroke="#f1f5f9"/>
+              <!-- Revenue area -->
+              <path d="M 0 140 L 100 110 L 200 120 L 300 70 L 400 90 L 500 40 L 600 60 L 600 200 L 0 200 Z" fill="url(#blueGrad)"/>
+              <path d="M 0 140 L 100 110 L 200 120 L 300 70 L 400 90 L 500 40 L 600 60" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Expenses area -->
+              <path d="M 0 170 L 100 160 L 200 165 L 300 130 L 400 140 L 500 110 L 600 120 L 600 200 L 0 200 Z" fill="url(#purpleGrad)"/>
+              <path d="M 0 170 L 100 160 L 200 165 L 300 130 L 400 140 L 500 110 L 600 120" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/>
+            </svg>
+            <div class="flex justify-between text-xs text-slate-400 mt-2 px-2">
+              <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+            </div>
           </div>
-          
-          <div>
-            <h4 class="font-600 mb-4">Produk</h4>
-            <ul class="space-y-2 text-white/70">
-              <li><a href="#" class="hover:text-white transition">Fitur</a></li>
-              <li><a href="#" class="hover:text-white transition">Harga</a></li>
-              <li><a href="#" class="hover:text-white transition">Demo</a></li>
-            </ul>
+
+          <!-- Goals progress -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <h4 class="font-bold text-slate-900 mb-4">Goals Progress</h4>
+            <div class="space-y-5">
+              <div>
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-slate-700 font-medium">Revenue Target</span>
+                  <span class="font-bold text-slate-900">78%</span>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full" style="width: 78%; background: linear-gradient(90deg, #3b82f6, #8b5cf6);"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-slate-700 font-medium">New Users</span>
+                  <span class="font-bold text-slate-900">92%</span>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full" style="width: 92%; background: linear-gradient(90deg, #10b981, #14b8a6);"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-slate-700 font-medium">Engagement</span>
+                  <span class="font-bold text-slate-900">65%</span>
+                </div>
+                <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full rounded-full" style="width: 65%; background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <div>
-            <h4 class="font-600 mb-4">Perusahaan</h4>
-            <ul class="space-y-2 text-white/70">
-              <li><a href="#" class="hover:text-white transition">Tentang</a></li>
-              <li><a href="#" class="hover:text-white transition">Blog</a></li>
-              <li><a href="#" class="hover:text-white transition">Karir</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 class="font-600 mb-4">Legal</h4>
-            <ul class="space-y-2 text-white/70">
-              <li><a href="#" class="hover:text-white transition">Privacy</a></li>
-              <li><a href="#" class="hover:text-white transition">Terms</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="border-t border-white/20 pt-8 text-center text-white/70">
-          <p>© 2026 Manapos. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="harga" class="section">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+          Harga <span class="gradient-text">Simpel & Transparan</span>
+        </h2>
+        <p class="text-lg text-slate-600">
+          Pilih paket yang sesuai. Semua termasuk trial gratis 14 hari.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Starter -->
+        <div class="card p-8">
+          <h3 class="text-lg font-bold text-slate-900 mb-1">Starter</h3>
+          <p class="text-sm text-slate-500 mb-6">Untuk tim kecil yang baru mulai</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-slate-900">Rp 299k</span>
+            <span class="text-slate-500">/bulan</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-slate-700">
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Penjualan & Inventory</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Laporan Dasar</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> 2 User</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Email Support</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> 1 Outlet</li>
+          </ul>
+          <a href="#" class="btn-secondary w-full justify-center">Pilih Paket</a>
+        </div>
+
+        <!-- Pro (featured) -->
+        <div class="card p-8 relative" style="border-color: #8b5cf6; box-shadow: 0 10px 30px rgba(124,58,237,0.15);">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <span class="pill pill-purple">Paling Populer</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-1 mt-2">Pro</h3>
+          <p class="text-sm text-slate-500 mb-6">Untuk bisnis berkembang dengan kebutuhan advanced</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-slate-900">Rp 699k</span>
+            <span class="text-slate-500">/bulan</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-slate-700">
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Semua fitur Starter</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Multi-outlet (max 3)</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Analytics Premium</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Payment Gateway</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> 10 User</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Priority Support</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Custom Reports</li>
+          </ul>
+          <a href="#" class="btn-primary w-full justify-center">Mulai Gratis 14 Hari <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="card p-8">
+          <h3 class="text-lg font-bold text-slate-900 mb-1">Enterprise</h3>
+          <p class="text-sm text-slate-500 mb-6">Untuk organisasi besar dengan kebutuhan custom</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-slate-900">Custom</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-slate-700">
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Semua fitur Pro</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Unlimited Outlet</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Dedicated Support</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Custom Integration</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> SLA Guarantee</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> On-premise Option</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Training Included</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Account Manager</li>
+          </ul>
+          <a href="#" class="btn-secondary w-full justify-center">Hubungi Sales</a>
+        </div>
+      </div>
+
+      <!-- Money back guarantee -->
+      <div class="text-center mt-8 text-sm text-slate-500 flex items-center justify-center gap-2">
+        <i class="fas fa-shield-halved text-emerald-500"></i>
+        Garansi uang kembali 30 hari
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust badges -->
+  <section class="py-12 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-center text-xs font-semibold tracking-widest text-slate-500 mb-8">DIPERCAYA 500+ BISNIS DI INDONESIA</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center text-slate-400">
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">G</span>Google</div>
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">M</span>Microsoft</div>
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">A</span>Amazon</div>
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">M</span>Meta</div>
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">A</span>Apple</div>
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">N</span>Netflix</div>
+        <div class="flex items-center gap-2 font-bold text-lg"><span class="w-7 h-7 rounded-md bg-slate-200 flex items-center justify-center text-slate-500 text-xs">T</span>Tesla</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="cta-gradient rounded-3xl p-10 sm:p-16 text-center text-white relative">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+          Siap Transformasi Bisnis Anda?
+        </h2>
+        <p class="text-lg text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
+          Mulai gratis 14 hari, tanpa kartu kredit. Setup dalam hitungan menit.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-slate-50 transition">
+            Mulai Sekarang <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/30 font-semibold px-6 py-3 rounded-lg hover:bg-white/20 transition">
+            Jadwalkan Demo
+          </a>
+        </div>
+        <p class="text-sm text-white/60 mt-6">✓ Tanpa kartu kredit  ✓ Cancel kapan saja  ✓ Support 24/7</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center gap-2 mb-4">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #7c3aed, #ec4899);">M</div>
+            <span class="text-lg font-bold text-white">Manapos</span>
+          </a>
+          <p class="text-sm text-slate-400 max-w-xs mb-6">
+            Sistem POS modern untuk retail, F&B, dan bisnis service. Kelola bisnis Anda dengan lebih cerdas.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition"><i class="fab fa-github"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm">Product</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-white transition">Fitur</a></li>
+            <li><a href="#" class="hover:text-white transition">Harga</a></li>
+            <li><a href="#" class="hover:text-white transition">Integrasi</a></li>
+            <li><a href="#" class="hover:text-white transition">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm">Perusahaan</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-white transition">Tentang</a></li>
+            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition">Karir</a></li>
+            <li><a href="#" class="hover:text-white transition">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm">Legal</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+            <li><a href="#" class="hover:text-white transition">Terms</a></li>
+            <li><a href="#" class="hover:text-white transition">Cookie</a></li>
+            <li><a href="#" class="hover:text-white transition">License</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 text-sm text-slate-500 flex flex-col sm:flex-row justify-between gap-4">
+        <p>© 2026 Manapos. All rights reserved.</p>
+        <p>Made with <i class="fas fa-heart text-pink-500"></i> in Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
