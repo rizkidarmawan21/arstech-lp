@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  manapos-landing:
+    image: nginx:alpine
+    container_name: manapos-landing
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+    ports:
+      - "3006:80"
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.manapos-landing.rule=Host(`manapos.168-144-42-39.sslip.io`)"
+      - "traefik.http.routers.manapos-landing.entrypoints=web"
+      - "traefik.http.services.manapos-landing.loadbalancer.server.port=80"
+    networks:
+      - traefik-proxy
+
+networks:
+  traefik-proxy:
+    external: true

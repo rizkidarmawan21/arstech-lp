@@ -3,128 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manapos - Sistem POS Modern untuk Bisnis Anda</title>
+  <title>Manapos - Sistem POS Modern Indonesia</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-    body { background: #ffffff; color: #0f172a; -webkit-font-smoothing: antialiased; }
-    .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06); transition: all 0.2s ease; }
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #fff; color: #0f172a; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.2s; }
     .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-    .btn-primary { background: #10b981; color: #ffffff; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease; border: none; cursor: pointer; }
-    .btn-primary:hover { background: #059669; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
-    .btn-secondary { background: #ffffff; color: #0f172a; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1px solid #0f172a; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease; cursor: pointer; }
-    .btn-secondary:hover { background: #0f172a; color: #ffffff; }
-    .btn-ghost { background: #f1f5f9; color: #0f172a; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease; border: none; cursor: pointer; }
+    .btn-primary { background: #10b981; color: #fff; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
+    .btn-primary:hover { background: #059669; }
+    .btn-secondary { background: #fff; color: #0f172a; padding: 12px 20px; border-radius: 10px; font-weight: 600; border: 1px solid #0f172a; transition: all 0.15s; }
+    .btn-secondary:hover { background: #0f172a; color: #fff; }
+    .btn-ghost { background: #f1f5f9; color: #0f172a; padding: 12px 20px; border-radius: 10px; font-weight: 600; transition: all 0.15s; }
     .btn-ghost:hover { background: #e2e8f0; }
-    .icon-circle { width: 48px; height: 48px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-size: 22px; color: #ffffff; }
-    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; }
-    .pill-green { background: #d1fae5; color: #047857; }
+    .icon-circle { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; }
     .section { padding: 80px 0; }
     @media (max-width: 768px) { .section { padding: 48px 0; } }
-    .app-preview { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
-    .app-header { background: #1e293b; color: white; padding: 12px 16px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-    .app-content { padding: 24px; background: white; min-height: 280px; display: grid; grid-template-columns: 200px 1fr; gap: 20px; }
-    @media (max-width: 768px) { .app-content { grid-template-columns: 1fr; gap: 12px; } }
-    .sidebar-demo { background: #f1f5f9; border-radius: 8px; padding: 16px; font-size: 13px; }
-    .sidebar-item { padding: 8px 12px; margin: 6px 0; border-radius: 6px; cursor: pointer; background: white; color: #64748b; }
-    .sidebar-item.active { background: #10b981; color: white; font-weight: 600; }
-    .main-demo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .kpi-card-demo { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px; text-align: center; }
-    .kpi-value { font-size: 20px; font-weight: 700; color: #0f172a; margin: 8px 0; }
-    .kpi-label { font-size: 12px; color: #64748b; }
   </style>
 </head>
 <body>
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold">M</div>
-        <span class="text-lg font-bold text-slate-900">Manapos</span>
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="/logo.png" alt="Manapos" class="h-10">
+        <span class="text-lg font-bold">Manapos</span>
       </a>
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="#fitur" class="hover:text-slate-900 transition">Fitur</a>
-        <a href="#bedanya" class="hover:text-slate-900 transition">Bedanya</a>
-        <a href="#harga" class="hover:text-slate-900 transition">Harga</a>
+      <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+        <a href="#fitur" class="hover:text-slate-900">Fitur</a>
+        <a href="#bedanya" class="hover:text-slate-900">Bedanya</a>
+        <a href="#harga" class="hover:text-slate-900">Harga</a>
       </div>
-      <div class="flex items-center gap-3">
-        <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Sign In</a>
+      <div class="flex gap-3">
+        <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900">Sign In</a>
         <a href="#" class="btn-primary text-sm">Coba Gratis</a>
       </div>
     </div>
   </nav>
 
   <section class="section pt-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="inline-flex mb-6">
-            <span class="pill pill-green">
-              <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
-              Cloud-based POS System
-            </span>
+          <div class="inline-flex mb-6 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-semibold">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full mr-2 mt-1"></span>
+            Cloud POS with AI
           </div>
-          <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.05] mb-6">
-            Sistem POS Modern untuk Bisnis Anda
+          <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+            Sistem POS Modern untuk Bisnis Indonesia
           </h1>
-          <p class="text-lg text-slate-600 max-w-lg mb-8 leading-relaxed">
-            Kelola penjualan, inventory, dan laporan bisnis secara real-time. Dirancang khusus untuk retail, F&B, dan bisnis service di Indonesia.
+          <p class="text-lg text-slate-600 mb-8">
+            Platform all-in-one dengan AI Assistant, HPP Calculator, Self-Order Microsite, dan analytics real-time.
           </p>
           <div class="flex flex-col sm:flex-row gap-3 mb-10">
             <a href="#" class="btn-primary">Mulai Gratis 14 Hari</a>
             <a href="#" class="btn-ghost"><i class="fas fa-play text-xs"></i> Lihat Demo</a>
           </div>
           <div class="grid grid-cols-3 gap-6">
-            <div>
-              <div class="text-3xl font-extrabold text-slate-900">500+</div>
-              <div class="text-sm text-slate-500 mt-1">Pengguna Aktif</div>
-            </div>
-            <div>
-              <div class="text-3xl font-extrabold text-slate-900">99.9%</div>
-              <div class="text-sm text-slate-500 mt-1">Uptime</div>
-            </div>
-            <div>
-              <div class="text-3xl font-extrabold text-slate-900">50M+</div>
-              <div class="text-sm text-slate-500 mt-1">Transaksi</div>
-            </div>
+            <div><div class="text-3xl font-bold">500+</div><div class="text-sm text-slate-500">Pengguna</div></div>
+            <div><div class="text-3xl font-bold">99.9%</div><div class="text-sm text-slate-500">Uptime</div></div>
+            <div><div class="text-3xl font-bold">50M+</div><div class="text-sm text-slate-500">Transaksi</div></div>
           </div>
         </div>
-        <div>
-          <div class="app-preview">
-            <div class="app-header">
-              <i class="fas fa-circle text-red-500" style="font-size: 8px;"></i>
-              <i class="fas fa-circle text-yellow-500" style="font-size: 8px;"></i>
-              <i class="fas fa-circle text-green-500" style="font-size: 8px;"></i>
-              <span style="margin-left: auto;">manapos.local/dashboard</span>
-            </div>
-            <div class="app-content">
-              <div class="sidebar-demo">
-                <div style="font-weight: 600; color: #0f172a; margin-bottom: 12px; font-size: 12px;">Menu</div>
-                <div class="sidebar-item active"><i class="fas fa-chart-line" style="margin-right: 8px;"></i>Dashboard</div>
-                <div class="sidebar-item"><i class="fas fa-shopping-cart" style="margin-right: 8px;"></i>Penjualan</div>
-                <div class="sidebar-item"><i class="fas fa-boxes" style="margin-right: 8px;"></i>Inventory</div>
-                <div class="sidebar-item"><i class="fas fa-file-invoice" style="margin-right: 8px;"></i>Laporan</div>
-                <div class="sidebar-item"><i class="fas fa-users" style="margin-right: 8px;"></i>Karyawan</div>
-              </div>
-              <div class="main-demo">
-                <div class="kpi-card-demo">
-                  <i class="fas fa-coins" style="font-size: 24px; color: #10b981;"></i>
-                  <div class="kpi-label">Total Revenue</div>
-                  <div class="kpi-value">Rp 124,5jt</div>
-                </div>
-                <div class="kpi-card-demo">
-                  <i class="fas fa-receipt" style="font-size: 24px; color: #3b82f6;"></i>
-                  <div class="kpi-label">Transaksi</div>
-                  <div class="kpi-value">8,549</div>
-                </div>
-                <div class="kpi-card-demo">
-                  <i class="fas fa-chart-bar" style="font-size: 24px; color: #f59e0b;"></i>
-                  <div class="kpi-label">Conversion</div>
-                  <div class="kpi-value">3.24%</div>
-                </div>
-              </div>
-            </div>
+        <div class="bg-slate-100 border rounded-2xl overflow-hidden shadow-xl">
+          <div class="bg-slate-800 text-white px-4 py-3 flex items-center gap-2 text-sm">
+            <i class="fas fa-circle text-red-500" style="font-size:8px"></i>
+            <i class="fas fa-circle text-yellow-500" style="font-size:8px"></i>
+            <i class="fas fa-circle text-green-500" style="font-size:8px"></i>
+            <span class="ml-auto">Dashboard</span>
+          </div>
+          <div class="p-6 bg-white">
+            <img src="https://via.placeholder.com/600x400/f8fafc/64748b?text=Manapos+Dashboard+Screenshot" alt="Manapos Dashboard" class="w-full rounded-lg">
           </div>
         </div>
       </div>
@@ -132,104 +82,101 @@
   </section>
 
   <section id="fitur" class="section bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Fitur Lengkap untuk Bisnis Anda</h2>
-        <p class="text-lg text-slate-600">Semua tools yang Anda butuhkan untuk mengelola operasional bisnis dengan efisien.</p>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Fitur Lengkap untuk Bisnis Anda</h2>
+        <p class="text-lg text-slate-600">15+ fitur powerful untuk kelola bisnis retail, F&B, dan service.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="card p-8">
-          <div class="icon-circle mb-5" style="background: #10b981;"><i class="fas fa-cash-register"></i></div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Sistem Penjualan</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Checkout cepat, multiple payment method, receipt otomatis, dan manajemen transaksi real-time.</p>
+          <div class="icon-circle mb-5" style="background:#10b981"><i class="fas fa-cash-register"></i></div>
+          <h3 class="text-lg font-bold mb-2">POS Checkout</h3>
+          <p class="text-sm text-slate-600">Checkout cepat, multiple payment, receipt otomatis, split bill, hold transaksi.</p>
         </div>
         <div class="card p-8">
-          <div class="icon-circle mb-5" style="background: #3b82f6;"><i class="fas fa-boxes-stacked"></i></div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Inventory Real-time</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Track stok otomatis, notifikasi low stock, barcode scanning, dan laporan inventory lengkap.</p>
+          <div class="icon-circle mb-5" style="background:#3b82f6"><i class="fas fa-boxes-stacked"></i></div>
+          <h3 class="text-lg font-bold mb-2">Inventory Real-time</h3>
+          <p class="text-sm text-slate-600">Stock tracking, barcode, low stock alert, transfer outlet, SKU management.</p>
         </div>
         <div class="card p-8">
-          <div class="icon-circle mb-5" style="background: #f59e0b;"><i class="fas fa-chart-line"></i></div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Analytics & Laporan</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Dashboard real-time dengan insights penjualan, profit margin, trending produk, dan forecasting.</p>
+          <div class="icon-circle mb-5" style="background:#f59e0b"><i class="fas fa-chart-line"></i></div>
+          <h3 class="text-lg font-bold mb-2">Analytics Dashboard</h3>
+          <p class="text-sm text-slate-600">Real-time sales, profit margin, trending produk, forecasting.</p>
         </div>
         <div class="card p-8">
-          <div class="icon-circle mb-5" style="background: #ec4899;"><i class="fas fa-users-gear"></i></div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Multi-User & Role</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Kelola permission karyawan, track aktivitas per user, dan audit trail untuk setiap transaksi.</p>
+          <div class="icon-circle mb-5" style="background:#ec4899"><i class="fas fa-calculator"></i></div>
+          <h3 class="text-lg font-bold mb-2">HPP Calculator</h3>
+          <p class="text-sm text-slate-600">Hitung cost produksi otomatis, track margin, optimasi harga.</p>
         </div>
         <div class="card p-8">
-          <div class="icon-circle mb-5" style="background: #06b6d4;"><i class="fas fa-shield-halved"></i></div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Keamanan Enterprise</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Enkripsi end-to-end, backup otomatis harian, dan compliance standar industri terpercaya.</p>
+          <div class="icon-circle mb-5" style="background:#06b6d4"><i class="fas fa-robot"></i></div>
+          <h3 class="text-lg font-bold mb-2">AI Assistant</h3>
+          <p class="text-sm text-slate-600">Rekomendasi stok, predictive pricing, anomaly detection, smart suggestions.</p>
         </div>
         <div class="card p-8">
-          <div class="icon-circle mb-5" style="background: #8b5cf6;"><i class="fas fa-cloud"></i></div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Cloud-Based</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">Akses dari mana saja, sync multi-device, infrastruktur global, dan zero maintenance.</p>
+          <div class="icon-circle mb-5" style="background:#8b5cf6"><i class="fas fa-mobile-screen"></i></div>
+          <h3 class="text-lg font-bold mb-2">Self-Order Microsite</h3>
+          <p class="text-sm text-slate-600">Customer order via QR code, mobile-friendly, real-time status.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background:#f43f5e"><i class="fas fa-users-gear"></i></div>
+          <h3 class="text-lg font-bold mb-2">Multi-User & Role</h3>
+          <p class="text-sm text-slate-600">Role-based access, permission, activity tracking, shift management.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background:#14b8a6"><i class="fas fa-receipt"></i></div>
+          <h3 class="text-lg font-bold mb-2">Laporan & Audit</h3>
+          <p class="text-sm text-slate-600">Sales report, inventory report, audit trail, cash reconciliation.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-circle mb-5" style="background:#f97316"><i class="fas fa-link"></i></div>
+          <h3 class="text-lg font-bold mb-2">Payment Integration</h3>
+          <p class="text-sm text-slate-600">Xendit, Midtrans, Duitku, QRIS, e-wallet, settlement otomatis.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="bedanya" class="section">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Kenapa Pilih Manapos?</h2>
-        <p class="text-lg text-slate-600">Dibanding POS lainnya, Manapos dirancang khusus untuk bisnis Indonesia.</p>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Kenapa Pilih Manapos?</h2>
+        <p class="text-lg text-slate-600">Fitur unik yang tidak dimiliki POS kompetitor.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="card p-8 border-emerald-200" style="border-width: 2px;">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
+        <div class="card p-8 border-emerald-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-robot text-emerald-600 text-2xl mt-1"></i>
             <div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Integrasi Payment Gateway Lokal</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Support Xendit, Midtrans, Duitku, dan payment gateway lokal lainnya. Setup dalam hitungan menit tanpa perlu developer.</p>
+              <h3 class="text-lg font-bold mb-2">AI-Powered Insights</h3>
+              <p class="text-sm text-slate-600">Satu-satunya POS Indonesia dengan AI Assistant untuk rekomendasi stok dan pricing optimization.</p>
             </div>
           </div>
         </div>
-        <div class="card p-8 border-emerald-200" style="border-width: 2px;">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
+        <div class="card p-8 border-emerald-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-calculator text-emerald-600 text-2xl mt-1"></i>
             <div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Laporan Sesuai Standar Indonesia</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Format laporan, pajak penjualan, dan invoice otomatis sesuai peraturan Indonesia dan kebutuhan bisnis lokal.</p>
+              <h3 class="text-lg font-bold mb-2">HPP Calculator Built-in</h3>
+              <p class="text-sm text-slate-600">Hitung cost produksi otomatis — fitur yang tidak ada di POS kompetitor.</p>
             </div>
           </div>
         </div>
-        <div class="card p-8 border-emerald-200" style="border-width: 2px;">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
+        <div class="card p-8 border-emerald-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-mobile-screen text-emerald-600 text-2xl mt-1"></i>
             <div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Support 24/7 Indonesia</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Tim support dalam bahasa Indonesia siap membantu kapan saja. Chat, email, atau phone support untuk semua paket.</p>
+              <h3 class="text-lg font-bold mb-2">Self-Order Microsite</h3>
+              <p class="text-sm text-slate-600">Customer order via QR code tanpa install app. Cocok untuk cafe dan resto.</p>
             </div>
           </div>
         </div>
-        <div class="card p-8 border-emerald-200" style="border-width: 2px;">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
+        <div class="card p-8 border-emerald-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-link text-emerald-600 text-2xl mt-1"></i>
             <div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Training & Onboarding Gratis</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Kami setup sistem Anda, training karyawan, dan migrasi data lama tanpa biaya tambahan.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card p-8 border-emerald-200" style="border-width: 2px;">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Customizable Tanpa Code</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Ubah tampilan, menu, dan workflow sesuai kebutuhan bisnis Anda tanpa perlu programmer.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card p-8 border-emerald-200" style="border-width: 2px;">
-          <div class="flex items-start gap-4">
-            <i class="fas fa-check-circle text-emerald-600 text-2xl mt-1"></i>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Offline Mode untuk Retail</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">Tetap bisa transaksi saat internet down. Data otomatis sync saat koneksi kembali.</p>
+              <h3 class="text-lg font-bold mb-2">Payment Gateway Lokal</h3>
+              <p class="text-sm text-slate-600">Xendit, Midtrans, Duitku native. QRIS, e-wallet, settlement otomatis.</p>
             </div>
           </div>
         </div>
@@ -238,47 +185,43 @@
   </section>
 
   <section id="harga" class="section bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Harga Simpel & Transparan</h2>
-        <p class="text-lg text-slate-600">Pilih paket yang sesuai. Semua termasuk trial gratis 14 hari.</p>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Harga Simpel & Transparan</h2>
+        <p class="text-lg text-slate-600">Trial gratis 14 hari untuk semua paket.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="card p-8">
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Starter</h3>
-          <p class="text-sm text-slate-500 mb-6">Untuk tim kecil</p>
-          <div class="mb-6"><span class="text-4xl font-extrabold text-slate-900">Rp 299k</span><span class="text-slate-500">/bulan</span></div>
-          <ul class="space-y-3 mb-8 text-sm text-slate-700">
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Penjualan & Inventory</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Laporan Dasar</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> 2 User</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> 1 Outlet</li>
+          <h3 class="text-lg font-bold mb-1">Starter</h3>
+          <p class="text-sm text-slate-500 mb-6">Tim kecil</p>
+          <div class="mb-6"><span class="text-4xl font-bold">Rp 299k</span><span class="text-slate-500">/bln</span></div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> POS & Inventory</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> 2 User, 1 Outlet</li>
           </ul>
           <a href="#" class="btn-secondary w-full justify-center">Pilih Paket</a>
         </div>
-        <div class="card p-8" style="border-color: #10b981; border-width: 2px;">
-          <div style="background: #d1fae5; color: #047857; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; width: fit-content; margin-bottom: 12px;">✓ Paling Populer</div>
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Pro</h3>
-          <p class="text-sm text-slate-500 mb-6">Untuk bisnis berkembang</p>
-          <div class="mb-6"><span class="text-4xl font-extrabold text-slate-900">Rp 699k</span><span class="text-slate-500">/bulan</span></div>
-          <ul class="space-y-3 mb-8 text-sm text-slate-700">
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Semua fitur Starter</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Multi-outlet (max 3)</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Analytics Premium</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Payment Gateway</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> 10 User</li>
+        <div class="card p-8" style="border-color:#10b981;border-width:2px">
+          <div class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold mb-3 w-fit">Populer</div>
+          <h3 class="text-lg font-bold mb-1">Pro</h3>
+          <p class="text-sm text-slate-500 mb-6">Bisnis berkembang</p>
+          <div class="mb-6"><span class="text-4xl font-bold">Rp 699k</span><span class="text-slate-500">/bln</span></div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> AI Assistant</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> HPP Calculator</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> Self-Order Microsite</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> 10 User, 3 Outlet</li>
           </ul>
-          <a href="#" class="btn-primary w-full justify-center">Mulai Gratis 14 Hari</a>
+          <a href="#" class="btn-primary w-full justify-center">Mulai Gratis</a>
         </div>
         <div class="card p-8">
-          <h3 class="text-lg font-bold text-slate-900 mb-1">Enterprise</h3>
-          <p class="text-sm text-slate-500 mb-6">Untuk bisnis besar</p>
-          <div class="mb-6"><span class="text-4xl font-extrabold text-slate-900">Custom</span></div>
-          <ul class="space-y-3 mb-8 text-sm text-slate-700">
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Semua fitur Pro</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Unlimited Outlet</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Dedicated Support</li>
-            <li class="flex gap-2"><i class="fas fa-check text-emerald-500 mt-0.5"></i> Custom Integration</li>
+          <h3 class="text-lg font-bold mb-1">Enterprise</h3>
+          <p class="text-sm text-slate-500 mb-6">Bisnis besar</p>
+          <div class="mb-6"><span class="text-4xl font-bold">Custom</span></div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> Semua fitur Pro</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> Unlimited Outlet</li>
+            <li class="flex gap-2"><i class="fas fa-check text-emerald-500"></i> Dedicated Support</li>
           </ul>
           <a href="#" class="btn-secondary w-full justify-center">Hubungi Sales</a>
         </div>
@@ -287,53 +230,51 @@
   </section>
 
   <section class="section">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <div class="card p-12 text-center bg-slate-900 text-white" style="border-color: #334155;">
-        <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4">Siap Transformasi Bisnis Anda?</h2>
-        <p class="text-lg text-slate-300 max-w-xl mx-auto mb-8">Mulai gratis 14 hari. Tanpa kartu kredit. Setup dalam hitungan menit.</p>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="card p-12 text-center bg-slate-900 text-white">
+        <h2 class="text-4xl font-bold mb-4">Siap Transformasi Bisnis Anda?</h2>
+        <p class="text-lg text-slate-300 mb-8">Mulai gratis 14 hari. Setup dalam hitungan menit.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#" class="btn-primary">Mulai Sekarang</a>
-          <button class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold transition">Jadwalkan Demo</button>
+          <button class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold">Demo</button>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="bg-slate-900 text-slate-300 py-12">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <div>
-          <a href="#" class="flex items-center gap-2 mb-4">
-            <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white font-bold">M</div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="/logo.png" alt="Manapos" class="h-9">
             <span class="text-lg font-bold text-white">Manapos</span>
-          </a>
-          <p class="text-sm text-slate-400">Sistem POS modern untuk bisnis Indonesia.</p>
+          </div>
+          <p class="text-sm">Sistem POS modern untuk Indonesia.</p>
         </div>
         <div>
           <h4 class="font-bold text-white mb-4 text-sm">Product</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Fitur</a></li>
-            <li><a href="#" class="hover:text-white transition">Harga</a></li>
-            <li><a href="#" class="hover:text-white transition">Integrasi</a></li>
+            <li><a href="#" class="hover:text-white">Fitur</a></li>
+            <li><a href="#" class="hover:text-white">Harga</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-bold text-white mb-4 text-sm">Perusahaan</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Tentang</a></li>
-            <li><a href="#" class="hover:text-white transition">Blog</a></li>
-            <li><a href="#" class="hover:text-white transition">Kontak</a></li>
+            <li><a href="#" class="hover:text-white">Tentang</a></li>
+            <li><a href="#" class="hover:text-white">Kontak</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-bold text-white mb-4 text-sm">Legal</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white transition">Privacy</a></li>
-            <li><a href="#" class="hover:text-white transition">Terms</a></li>
+            <li><a href="#" class="hover:text-white">Privacy</a></li>
+            <li><a href="#" class="hover:text-white">Terms</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-slate-800 pt-8 text-sm text-slate-500 text-center">
+      <div class="border-t border-slate-800 pt-8 text-sm text-center">
         <p>© 2026 Manapos. Sistem POS untuk Indonesia.</p>
       </div>
     </div>
