@@ -10,7 +10,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
     * { font-family: 'Inter', sans-serif; }
-    body { background: #fff; color: #0f172a; }
+    body { background: #fff; color: #0f172a; overflow-x: hidden; }
     .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.2s; }
     .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
     .btn-primary { background: #0ea5e9; color: #fff; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
@@ -34,7 +34,7 @@
       .section { padding: 48px 0; } 
       .pt-20 { padding-top: 32px !important; } 
       .hero-stack { height: 55vw; max-height: 320px; min-height: 220px; width: 100%; overflow: visible; margin-top: 30px; margin-bottom: 30px; } 
-      .hero-shot { width: 88%; } 
+      .hero-shot { width: 76%; } 
     } 
   </style>
 </head>
@@ -304,6 +304,7 @@
     const shots = document.querySelectorAll('.hero-shot');
 
     function getTransform(pos) {
+      const isMobile = window.innerWidth <= 768;
       if (pos === 'center') {
         return {
           translateX: '-50%',
@@ -313,17 +314,17 @@
         };
       } else if (pos === 'left') {
         return {
-          translateX: '-78%',
+          translateX: isMobile ? '-72%' : '-78%',
           translateY: '-50%',
-          scale: 0.8,
-          rotateY: '12deg'
+          scale: isMobile ? 0.78 : 0.8,
+          rotateY: isMobile ? '8deg' : '12deg'
         };
       } else if (pos === 'right') {
         return {
-          translateX: '5%',
+          translateX: isMobile ? '-28%' : '5%',
           translateY: '-50%',
-          scale: 0.8,
-          rotateY: '-12deg'
+          scale: isMobile ? 0.78 : 0.8,
+          rotateY: isMobile ? '-8deg' : '-12deg'
         };
       }
     }
