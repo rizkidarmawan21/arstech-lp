@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manapos - Sistem POS Modern Indonesia</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -20,7 +21,14 @@
     .btn-ghost:hover { background: #e2e8f0; }
     .icon-circle { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; }
     .section { padding: 80px 0; }
-    @media (max-width: 768px) { .section { padding: 48px 0; } }
+    .hero-stack { position: relative; height: 430px; perspective: 1200px; }
+    .hero-shot { position: absolute; top: 50%; left: 50%; width: 82%; border: 1px solid #e5e7eb; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 22px 55px rgba(15,23,42,.16); cursor: pointer; transform-origin: center; }
+    .hero-shot img { width: 100%; display: block; pointer-events: none; }
+    .hero-shot[data-pos="center"] { z-index: 3; }
+    .hero-shot[data-pos="left"], .hero-shot[data-pos="right"] { z-index: 2; }
+    .hero-shot[data-pos="left"]::after, .hero-shot[data-pos="right"]::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,.34); pointer-events: none; }
+    @media (max-width: 1024px) { .hero-stack { height: 360px; margin-top: 20px; } }
+    @media (max-width: 768px) { .section { padding: 48px 0; } .hero-stack { height: 300px; } .hero-shot { width: 90%; } } 
   </style>
 </head>
 <body>
@@ -65,8 +73,16 @@
             <div><div class="text-3xl font-bold">50M+</div><div class="text-sm text-slate-500">Transaksi</div></div>
           </div>
         </div>
-        <div class="bg-white border rounded-2xl overflow-hidden shadow-xl">
-          <img src="/dashboard-preview.png" alt="Manapos Dashboard" class="w-full h-auto">
+        <div class="hero-stack" aria-label="Preview Manapos">
+          <button class="hero-shot" data-shot="dashboard" aria-label="Dashboard preview">
+            <img src="/dashboard-preview.png" alt="Dashboard Manapos">
+          </button>
+          <button class="hero-shot" data-shot="pos" aria-label="POS preview">
+            <img src="/pos-preview.png" alt="POS Manapos">
+          </button>
+          <button class="hero-shot" data-shot="ai" aria-label="AI Assistant preview">
+            <img src="/ai-preview.png" alt="AI Assistant Manapos">
+          </button>
         </div>
     </div>
   </section>
@@ -269,5 +285,105 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const order = ['dashboard', 'pos', 'ai'];
+    let state = {
+      dashboard: 'center',
+      pos: 'right',
+      ai: 'left'
+    };
+
+    const shots = document.querySelectorAll('.hero-shot');
+
+    function getTransform(pos) {
+      if (pos === 'center') {
+        return {
+          translateX: '-50%',
+          translateY: '-50%',
+          scale: 1,
+          rotateY: '0deg'
+        };
+      } else if (pos === 'left') {
+        return {
+          translateX: '-105%',
+          translateY: '-50%',
+          scale: 0.8,
+          rotateY: '12deg'
+        };
+      } else if (pos === 'right') {
+        return {
+          translateX: '5%',
+          translateY: '-50%',
+          scale: 0.8,
+          rotateY: '-12deg'
+        };
+      }
+    }
+
+    function updatePositions(animate = true) {
+      shots.forEach(shot => {
+        const key = shot.getAttribute('data-shot');
+        const pos = state[key];
+        shot.setAttribute('data-pos', pos);
+
+        const config = getTransform(pos);
+
+        if (animate && window.anime) {
+          anime({
+            targets: shot,
+            translateX: config.translateX,
+            translateY: config.translateY,
+            scale: config.scale,
+            rotateY: config.rotateY,
+            duration: 600,
+            easing: 'easeOutElastic(1, 0.85)',
+            begin: function(anim) {
+              anim.animatables.forEach(a => {
+                a.target.style.zIndex = pos === 'center' ? '3' : '2';
+              });
+            }
+          });
+        } else {
+          shot.style.transform = `translateX(${config.translateX}) translateY(${config.translateY}) scale(${config.scale}) rotateY(${config.rotateY})`;
+          shot.style.zIndex = pos === 'center' ? '3' : '2';
+        }
+      });
+    }
+
+    shots.forEach(shot => {
+      shot.addEventListener('click', () => {
+        const clickedKey = shot.getAttribute('data-shot');
+        const clickedPos = state[clickedKey];
+        
+        if (clickedPos === 'center') return;
+
+        if (clickedPos === 'left') {
+          // left becomes center, center becomes right, right becomes left
+          const newStates = {};
+          for (let k in state) {
+            if (state[k] === 'left') newStates[k] = 'center';
+            else if (state[k] === 'center') newStates[k] = 'right';
+            else if (state[k] === 'right') newStates[k] = 'left';
+          }
+          state = newStates;
+        } else if (clickedPos === 'right') {
+          // right becomes center, center becomes left, left becomes right
+          const newStates = {};
+          for (let k in state) {
+            if (state[k] === 'right') newStates[k] = 'center';
+            else if (state[k] === 'center') newStates[k] = 'left';
+            else if (state[k] === 'left') newStates[k] = 'right';
+          }
+          state = newStates;
+        }
+
+        updatePositions(true);
+      });
+    });
+
+    // Initial positioning
+    updatePositions(false);
+  </script>
 </body>
 </html>
