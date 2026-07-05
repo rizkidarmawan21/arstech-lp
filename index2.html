@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manapos - Sistem POS Modern Indonesia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+    * { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+    body { background: #fff; color: #0f172a; overflow-x: hidden; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.2s; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .btn-primary { background: #0284c7; color: #fff; padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s; }
+    .btn-primary:hover { background: #0369a1; }
+    .btn-secondary { background: #fff; color: #0f172a; padding: 12px 24px; border-radius: 12px; font-weight: 600; border: 1px solid #0f172a; transition: all 0.15s; }
+    .btn-secondary:hover { background: #0f172a; color: #fff; }
+    .btn-ghost { background: #f1f5f9; color: #0f172a; padding: 12px 24px; border-radius: 12px; font-weight: 600; transition: all 0.15s; }
+    .btn-ghost:hover { background: #e2e8f0; }
+    .icon-disk { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; }
+    .section { padding: 80px 0; }
+    .hero-stack { position: relative; height: 430px; perspective: 1200px; }
+    .hero-shot { position: absolute; top: 50%; left: 50%; width: 82%; border: 1px solid #e5e7eb; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 22px 55px rgba(15,23,42,.16); cursor: pointer; transform-origin: center; }
+    .hero-shot img { width: 100%; display: block; pointer-events: none; }
+    .hero-shot[data-pos="center"] { z-index: 3; }
+    .hero-shot[data-pos="left"], .hero-shot[data-pos="right"] { z-index: 2; }
+    .hero-shot[data-pos="left"]::after, .hero-shot[data-pos="right"]::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,.34); pointer-events: none; }
+    @media (max-width: 1024px) { 
+      .hero-stack { height: 50vw; max-height: 400px; min-height: 320px; margin-top: 40px; } 
+    }
+    @media (max-width: 768px) { 
+      .section { padding: 48px 0; } 
+      .pt-20 { padding-top: 32px !important; } 
+      .hero-stack { height: 55vw; max-height: 320px; min-height: 220px; width: 100%; overflow: hidden; margin-top: 30px; margin-bottom: 30px; } 
+      .hero-shot { width: 68%; } 
+    } 
+  </style>
+</head>
+<body>
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="/logo.png" alt="Manapos" class="h-10">
+        <span class="text-lg font-bold font-outfit tracking-tight">Manapos</span>
+      </a>
+      <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+        <a href="#fitur" class="hover:text-slate-900 transition-colors">Fitur</a>
+        <a href="#bedanya" class="hover:text-slate-900 transition-colors">Bedanya</a>
+        <a href="#harga" class="hover:text-slate-900 transition-colors">Harga</a>
+      </div>
+      <div class="flex gap-3">
+        <a href="#" class="btn-primary text-sm">Coba Gratis</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section pt-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex mb-6 bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold">
+            Cloud POS with AI
+          </div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+            Sistem POS Modern<br>untuk Bisnis Indonesia
+          </h1>
+          <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-xl">
+            Platform all-in-one dengan AI Assistant, HPP Calculator, Self-Order Microsite, dan analytics real-time.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 mb-10">
+            <a href="#" class="btn-primary">Coba Gratis 14 Hari</a>
+            <a href="#" class="btn-ghost"><i class="fas fa-play text-xs"></i> Lihat Demo</a>
+          </div>
+          <div class="grid grid-cols-3 gap-6">
+            <div><div class="text-3xl font-bold font-outfit tracking-tight">500+</div><div class="text-sm text-slate-400">Pengguna</div></div>
+            <div><div class="text-3xl font-bold font-outfit tracking-tight">99.9%</div><div class="text-sm text-slate-400">Uptime</div></div>
+            <div><div class="text-3xl font-bold font-outfit tracking-tight">50M+</div><div class="text-sm text-slate-400">Transaksi</div></div>
+          </div>
+        </div>
+        <div class="hero-stack" aria-label="Preview Manapos">
+          <button class="hero-shot" data-shot="dashboard" aria-label="Dashboard preview">
+            <img src="/dashboard-preview.png" alt="Dashboard Manapos">
+          </button>
+          <button class="hero-shot" data-shot="pos" aria-label="POS preview">
+            <img src="/pos-preview.png" alt="POS Manapos">
+          </button>
+          <button class="hero-shot" data-shot="ai" aria-label="AI Assistant preview">
+            <img src="/ai-preview.png" alt="AI Assistant Manapos">
+          </button>
+        </div>
+    </div>
+  </section>
+
+  <section id="fitur" class="section bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Fitur Lengkap untuk Bisnis Anda</h2>
+        <p class="text-lg text-slate-500">15+ fitur powerful untuk kelola bisnis retail, F&B, dan service.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-8 lg:col-span-2 bg-gradient-to-br from-sky-50 to-white">
+          <div class="flex gap-6">
+            <div>
+              <div class="icon-disk mb-4" style="background:#0284c7"><i class="fas fa-cash-register"></i></div>
+              <h3 class="text-xl font-bold mb-2">POS Checkout</h3>
+              <p class="text-sm text-slate-500">Checkout cepat, multiple payment method, receipt otomatis, print thermal, split bill, hold transaksi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#06b6d4"><i class="fas fa-boxes-stacked"></i></div>
+          <h3 class="text-lg font-bold mb-2">Inventory Real-time</h3>
+          <p class="text-sm text-slate-500">Stock tracking, barcode scanning, low stock alert, transfer antar outlet, SKU management.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#f59e0b"><i class="fas fa-chart-line"></i></div>
+          <h3 class="text-lg font-bold mb-2">Analytics Dashboard</h3>
+          <p class="text-sm text-slate-500">Real-time sales, profit margin, trending produk, forecasting.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#ec4899"><i class="fas fa-calculator"></i></div>
+          <h3 class="text-lg font-bold mb-2">HPP Calculator</h3>
+          <p class="text-sm text-slate-500">Hitung cost produksi otomatis, track margin, optimasi harga.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#06b6d4"><i class="fas fa-robot"></i></div>
+          <h3 class="text-lg font-bold mb-2">AI Assistant</h3>
+          <p class="text-sm text-slate-500">Rekomendasi stok, predictive pricing, anomaly detection, smart suggestions.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#8b5cf6"><i class="fas fa-mobile-screen"></i></div>
+          <h3 class="text-lg font-bold mb-2">Self-Order Microsite</h3>
+          <p class="text-sm text-slate-500">Customer order via QR code, mobile-friendly, real-time status.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#f43f5e"><i class="fas fa-users-gear"></i></div>
+          <h3 class="text-lg font-bold mb-2">Multi-User & Role</h3>
+          <p class="text-sm text-slate-500">Role-based access, permission, activity tracking, shift management.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#14b8a6"><i class="fas fa-receipt"></i></div>
+          <h3 class="text-lg font-bold mb-2">Laporan & Audit</h3>
+          <p class="text-sm text-slate-500">Sales report, inventory report, audit trail, cash reconciliation.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#f97316"><i class="fas fa-link"></i></div>
+          <h3 class="text-lg font-bold mb-2">Payment Integration</h3>
+          <p class="text-sm text-slate-500">Xendit, Midtrans, Duitku, QRIS, e-wallet, settlement otomatis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bedanya" class="section">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Kenapa Pilih Manapos?</h2>
+        <p class="text-lg text-slate-500">Fitur unik yang tidak dimiliki POS kompetitor.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card p-8 border-sky-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-robot text-sky-600 text-2xl mt-1"></i>
+            <div>
+              <h3 class="text-lg font-bold mb-2">AI-Powered Insights</h3>
+              <p class="text-sm text-slate-500">Satu-satunya POS Indonesia dengan AI Assistant untuk rekomendasi stok dan pricing optimization.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-8 border-sky-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-calculator text-sky-600 text-2xl mt-1"></i>
+            <div>
+              <h3 class="text-lg font-bold mb-2">HPP Calculator Built-in</h3>
+              <p class="text-sm text-slate-500">Hitung cost produksi otomatis - fitur yang tidak ada di POS kompetitor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-8 border-sky-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-mobile-screen text-sky-600 text-2xl mt-1"></i>
+            <div>
+              <h3 class="text-lg font-bold mb-2">Self-Order Microsite</h3>
+              <p class="text-sm text-slate-500">Customer order via QR code tanpa install app. Cocok untuk cafe dan resto.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card p-8 border-sky-200" style="border-width:2px">
+          <div class="flex gap-4">
+            <i class="fas fa-link text-sky-600 text-2xl mt-1"></i>
+            <div>
+              <h3 class="text-lg font-bold mb-2">Payment Gateway Lokal</h3>
+              <p class="text-sm text-slate-500">Xendit, Midtrans, Duitku native. QRIS, e-wallet, settlement otomatis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="harga" class="section bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Harga Simpel & Transparan</h2>
+        <p class="text-lg text-slate-500">Trial gratis 14 hari untuk semua paket.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="card p-8 border-sky-500" style="border-width:2px">
+          <div class="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-xs font-bold mb-3 w-fit">Populer</div>
+          <h3 class="text-lg font-bold mb-1">For You</h3>
+          <p class="text-sm text-slate-500 mb-6">Paket lengkap & terjangkau</p>
+          <div class="mb-6"><span class="text-4xl font-bold font-outfit tracking-tight">Rp 69k</span><span class="text-slate-400">/bln</span></div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> POS Multi Session & Inventory</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> HPP Calculator + AI Summary</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> AI Assistant (10 Turn Limit)</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Self Order</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Table Management</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> API Integration</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Customer Data</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Payment Gateway</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Print Template</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> 24/7 Support</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> User 10</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> 1 Outlet</li>
+          </ul>
+          <a href="#" class="btn-primary w-full justify-center">Coba Gratis 14 Hari</a>
+        </div>
+        <div class="card p-8">
+          <h3 class="text-lg font-bold mb-1">Custom</h3>
+          <p class="text-sm text-slate-500 mb-6">Solusi kustom bisnis besar</p>
+          <div class="mb-6"><span class="text-4xl font-bold font-outfit tracking-tight">Custom</span></div>
+          <ul class="space-y-3 mb-8 text-sm">
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> All in For You</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Dedicated Support</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Custom User</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Custom AI Limit</li>
+            <li class="flex gap-2"><i class="fas fa-check text-sky-500 mt-0.5"></i> Self Hosted</li>
+          </ul>
+          <a href="#" class="btn-secondary w-full justify-center">Hubungi Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-slate-900 rounded-2xl p-12 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-white tracking-tight">Siap Transformasi Bisnis Anda?</h2>
+        <p class="text-lg text-slate-400 mb-8">Mulai gratis 14 hari. Setup dalam hitungan menit.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#" class="btn-primary">Coba Gratis 14 Hari</a>
+          <button class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors">Demo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-400 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="/logo.png" alt="Manapos" class="h-9">
+            <span class="text-lg font-bold text-white font-outfit tracking-tight">Manapos</span>
+          </div>
+          <p class="text-sm text-slate-500">Sistem POS modern untuk Indonesia.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm">Product</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#fitur" class="hover:text-white transition-colors">Fitur</a></li>
+            <li><a href="#harga" class="hover:text-white transition-colors">Harga</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm">Perusahaan</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Tentang</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-4 text-sm">Legal</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 text-sm text-center">
+        <p class="text-slate-500">&copy; 2026 Manapos. Sistem POS untuk Indonesia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const order = ['dashboard', 'pos', 'ai'];
+    let state = {
+      dashboard: 'center',
+      pos: 'right',
+      ai: 'left'
+    };
+
+    const shots = document.querySelectorAll('.hero-shot');
+
+    function getTransform(pos) {
+      if (pos === 'center') {
+        return {
+          translateX: '-50%',
+          translateY: '-50%',
+          scale: 1,
+          rotateY: '0deg'
+        };
+      } else if (pos === 'left') {
+        return {
+          translateX: '-78%',
+          translateY: '-50%',
+          scale: 0.8,
+          rotateY: '12deg'
+        };
+      } else if (pos === 'right') {
+        return {
+          translateX: '5%',
+          translateY: '-50%',
+          scale: 0.8,
+          rotateY: '-12deg'
+        };
+      }
+    }
+
+    function updatePositions(animate = true) {
+      shots.forEach(shot => {
+        const key = shot.getAttribute('data-shot');
+        const pos = state[key];
+        shot.setAttribute('data-pos', pos);
+
+        const config = getTransform(pos);
+
+        if (animate && window.anime) {
+          anime({
+            targets: shot,
+            translateX: config.translateX,
+            translateY: config.translateY,
+            scale: config.scale,
+            rotateY: config.rotateY,
+            duration: 600,
+            easing: 'easeOutElastic(1, 0.85)',
+            begin: function(anim) {
+              anim.animatables.forEach(a => {
+                a.target.style.zIndex = pos === 'center' ? '3' : '2';
+              });
+            }
+          });
+        } else {
+          shot.style.transform = `translateX(${config.translateX}) translateY(${config.translateY}) scale(${config.scale}) rotateY(${config.rotateY})`;
+          shot.style.zIndex = pos === 'center' ? '3' : '2';
+        }
+      });
+    }
+
+    shots.forEach(shot => {
+      shot.addEventListener('click', () => {
+        const clickedKey = shot.getAttribute('data-shot');
+        const clickedPos = state[clickedKey];
+        
+        if (clickedPos === 'center') return;
+
+        if (clickedPos === 'left') {
+          // left becomes center, center becomes right, right becomes left
+          const newStates = {};
+          for (let k in state) {
+            if (state[k] === 'left') newStates[k] = 'center';
+            else if (state[k] === 'center') newStates[k] = 'right';
+            else if (state[k] === 'right') newStates[k] = 'left';
+          }
+          state = newStates;
+        } else if (clickedPos === 'right') {
+          // right becomes center, center becomes left, left becomes right
+          const newStates = {};
+          for (let k in state) {
+            if (state[k] === 'right') newStates[k] = 'center';
+            else if (state[k] === 'center') newStates[k] = 'left';
+            else if (state[k] === 'left') newStates[k] = 'right';
+          }
+          state = newStates;
+        }
+
+        updatePositions(true);
+      });
+    });
+
+    // Initial positioning
+    updatePositions(false);
+  </script>
+</body>
+</html>
