@@ -3,322 +3,318 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arstech - Digital Engineering & Consulting Partner</title>
+  <title>Arstech - Solusi Software untuk Bisnis Anda</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       font-feature-settings: "cv01" 1, "ss03" 1;
-      background-color: #08090a;
-      color: #f7f8f8;
+      background-color: #f8fafc;
+      color: #0f172a;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    
-    .font-mono-geist {
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* Transparent white borders from Linear DS */
-    .border-subtle {
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .border-standard {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* Luminance elevation cards */
+    .font-mono-geist { font-family: 'JetBrains Mono', monospace; }
+    .border-standard { border: 1px solid rgba(2, 132, 199, 0.15); }
     .level-2-card {
-      background-color: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background-color: #ffffff;
+      border: 1px solid rgba(2, 132, 199, 0.12);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
     .level-2-card:hover {
-      background-color: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(2, 132, 199, 0.4);
       transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08);
     }
-
-    /* Linear's signature indigo-violet accent glow */
-    .glow-effect {
+    .accent-glow {
       position: relative;
     }
-    
-    .glow-effect::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      box-shadow: 0 0 40px rgba(113, 112, 255, 0.15);
-      opacity: 0.8;
-      pointer-events: none;
-      z-index: -1;
+    .hero-console {
+      background: #ffffff;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      box-shadow: 0 20px 60px rgba(2, 132, 199, 0.15), 0 0 60px rgba(6, 182, 212, 0.08);
     }
   </style>
 </head>
-<body class="selection:bg-[#5e6ad2] selection:text-white">
+<body class="selection:bg-[#0284c7] selection:text-white">
 
   <!-- Header Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#08090a]/80 backdrop-blur-md border-b border-white/[0.05]">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f8fafc]/80 backdrop-blur-md border-b border-sky-100">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <!-- Logo Awning Canopy + Cyan Basket -->
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 14C4 10 7 10 16 10C25 10 28 10 28 14H4Z" fill="#7170ff"/>
+        <!-- Logo Awning Canopy + Cyan Basket (Manapos style) -->
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 14C4 10 7 10 16 10C25 10 28 10 28 14H4Z" fill="#0284c7"/>
           <path d="M6 14H26V18C26 22 22 26 16 26C10 26 6 22 6 18V14Z" fill="#06b6d4" fill-opacity="0.85"/>
         </svg>
-        <span class="text-sm font-semibold uppercase tracking-wider font-mono-geist text-[#f7f8f8]">ARSTECH</span>
+        <span class="text-lg font-semibold tracking-tight text-slate-900 font-mono-geist">ARSTECH</span>
       </div>
-      
       <div class="hidden md:flex items-center gap-8">
-        <a href="#solusi" class="text-xs font-semibold uppercase tracking-widest text-[#d0d6e0] hover:text-[#f7f8f8] transition">Solusi</a>
-        <a href="#metode" class="text-xs font-semibold uppercase tracking-widest text-[#d0d6e0] hover:text-[#f7f8f8] transition">Metodologi</a>
-        <a href="#tentang" class="text-xs font-semibold uppercase tracking-widest text-[#d0d6e0] hover:text-[#f7f8f8] transition">Tentang</a>
-        <a href="#kontak" class="text-xs font-semibold uppercase tracking-wider text-white bg-[#5e6ad2] px-4 py-2 rounded hover:bg-[#7170ff] transition">Hubungi Kami</a>
+        <a href="#layanan" class="text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-sky-600 transition">Layanan</a>
+        <a href="#cara" class="text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-sky-600 transition">Cara Kerja</a>
+        <a href="#tentang" class="text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-sky-600 transition">Tentang Kami</a>
+        <a href="#kontak" class="text-xs font-semibold uppercase tracking-wider text-white bg-sky-600 px-4 py-2.5 rounded-md hover:bg-sky-700 transition">Hubungi Kami</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section (Vast Centered Layout) -->
+  <!-- Hero Section (Light, Centered, Linear-style Vast) -->
   <header class="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden pt-24 pb-12">
-    <!-- Ambient back glow to prevent AI purple mesh but keeping premium indigo feel -->
-    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#5e6ad2]/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-200/40 blur-[120px] rounded-full pointer-events-none -z-10"></div>
     
     <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-      <!-- Tagline Pill -->
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.02] border border-white/[0.08] mb-8">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
-        <span class="text-[11px] font-medium tracking-wider uppercase text-[#d0d6e0] font-mono-geist">PROPOSAL SYSTEM V2.4</span>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-50 border border-sky-200 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+        <span class="text-[11px] font-medium tracking-wider uppercase text-sky-700 font-mono-geist">SOFTWARE & DIGITAL SERVICE</span>
       </div>
       
-      <!-- Gigantic Title with Aggressive Negative Letter Spacing -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-[-0.03em] leading-[1.05] text-[#f7f8f8] max-w-[15ch] mb-8">
-        Membangun Fondasi Digital untuk Skala Bisnis
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.03em] leading-[1.05] text-slate-900 max-w-[15ch] mb-8">
+        Bantu Bisnis Anda Berkembang dengan Teknologi
       </h1>
       
-      <!-- Tight copy, maximum 20 words -->
-      <p class="text-base sm:text-lg md:text-xl text-[#d0d6e0] max-w-[55ch] leading-relaxed mb-10 font-light">
-        Arstech merancang sistem perangkat lunak performa tinggi dan cloud aman untuk efisiensi bisnis korporat Anda.
+      <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-[55ch] leading-relaxed mb-10 font-light">
+        Arstech membantu UMKM dan perusahaan membangun website, aplikasi kasir, dan sistem digital yang mudah dipakai.
       </p>
       
-      <!-- Primary and Secondary Actions -->
       <div class="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto justify-center">
-        <a href="#kontak" class="bg-[#5e6ad2] hover:bg-[#7170ff] text-white font-medium text-sm px-8 py-3.5 rounded-md transition shadow-lg shadow-[#5e6ad2]/20">
-          Mulai Kolaborasi
+        <a href="#kontak" class="bg-sky-600 hover:bg-sky-700 text-white font-medium text-sm px-8 py-3.5 rounded-md transition shadow-md shadow-sky-200">
+          Konsultasi Gratis
         </a>
-        <a href="#solusi" class="bg-white/[0.02] border border-white/[0.08] hover:bg-white/[0.05] text-[#f7f8f8] font-medium text-sm px-8 py-3.5 rounded-md transition">
-          Pelajari Layanan
+        <a href="#layanan" class="bg-white border border-sky-200 hover:border-sky-400 hover:bg-sky-50 text-slate-700 font-medium text-sm px-8 py-3.5 rounded-md transition">
+          Lihat Layanan
         </a>
       </div>
 
-      <!-- Large Interactive System Visual Mockup (1200px style display) -->
-      <div class="w-full max-w-5xl mx-auto rounded-xl border border-white/[0.08] bg-white/[0.01] p-6 glow-effect">
-        <div class="flex items-center justify-between border-b border-white/[0.05] pb-4 mb-6">
+      <!-- Light Interactive Console Mockup (Manapos-like dash) -->
+      <div class="w-full max-w-5xl mx-auto rounded-xl hero-console p-6">
+        <div class="flex items-center justify-between border-b border-sky-100 pb-4 mb-6">
           <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-400/80"></span>
           </div>
-          <span class="text-[10px] tracking-widest text-[#8a8f98] font-mono-geist">ARSTECH CORE CONSOLE</span>
-          <span class="text-[10px] text-[#7170ff] font-mono-geist bg-[#5e6ad2]/10 px-2 py-0.5 rounded">CONNECTED</span>
+          <span class="text-[10px] tracking-widest text-slate-400 font-mono-geist">ARSTECH DASHBOARD CONSOLE</span>
+          <span class="text-[10px] text-sky-700 font-mono-geist bg-sky-50 px-2 py-0.5 rounded">READY</span>
         </div>
         <div class="grid md:grid-cols-3 gap-6 text-left">
-          <div class="bg-white/[0.01] border border-white/[0.05] p-5 rounded">
-            <span class="text-[10px] tracking-wider text-[#8a8f98] font-mono-geist uppercase block mb-1">API THROUGHPUT</span>
-            <div class="text-2xl font-semibold text-[#f7f8f8] font-mono-geist mb-2">48,294 req/s</div>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono-geist">99.99% UPTIME</span>
+          <div class="bg-sky-50/50 border border-sky-100 p-5 rounded">
+            <span class="text-[10px] tracking-wider text-slate-500 font-mono-geist uppercase block mb-1">PENDAPATAN HARI INI</span>
+            <div class="text-2xl font-bold text-sky-700 font-mono-geist mb-2">Rp 12,4 jt</div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-mono-geist">+23%</span>
           </div>
-          <div class="bg-white/[0.01] border border-white/[0.05] p-5 rounded">
-            <span class="text-[10px] tracking-wider text-[#8a8f98] font-mono-geist uppercase block mb-1">SYSTEM LATENCY</span>
-            <div class="text-2xl font-semibold text-[#f7f8f8] font-mono-geist mb-2">12.4 ms</div>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono-geist">OPTIMIZED</span>
+          <div class="bg-sky-50/50 border border-sky-100 p-5 rounded">
+            <span class="text-[10px] tracking-wider text-slate-500 font-mono-geist uppercase block mb-1">TRANSAKSI</span>
+            <div class="text-2xl font-semibold text-sky-700 font-mono-geist mb-2">8.549</div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-mono-geist">+431 HARI INI</span>
           </div>
-          <div class="bg-white/[0.01] border border-white/[0.05] p-5 rounded">
-            <span class="text-[10px] tracking-wider text-[#8a8f98] font-mono-geist uppercase block mb-1">CLOUD INSTANCES</span>
-            <div class="text-2xl font-semibold text-[#f7f8f8] font-mono-geist mb-2">18 Active</div>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono-geist">SCALED</span>
+          <div class="bg-sky-50/50 border border-sky-100 p-5 rounded">
+            <span class="text-[10px] tracking-wider text-slate-500 font-mono-geist uppercase block mb-1">PRODUK TERJUAL</span>
+            <div class="text-2xl font-semibold text-sky-700 font-mono-geist mb-2">1.248</div>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-mono-geist">AKTIF</span>
           </div>
         </div>
       </div>
-
     </div>
   </header>
 
-  <!-- Logo Wall (Social Proof) -->
-  <section class="py-12 bg-[#08090a] border-y border-white/[0.05]">
+  <!-- Social Proof Strip -->
+  <section class="py-12 bg-white border-y border-sky-100">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-[10px] font-semibold text-[#8a8f98] tracking-widest uppercase mb-8 text-center font-mono-geist">
-        KREDIBILITAS TERPERCAYA DI SEKTOR INDUSTRI
+      <p class="text-[10px] font-semibold text-slate-400 tracking-widest uppercase mb-8 text-center font-mono-geist">
+        DIPERCAYA KAMI DALAM MENGEMBANGKAN UMKM & BISNIS
       </p>
-      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
+      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70">
         <div class="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#d0d6e0]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 007.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"></path></svg>
-          <span class="text-xs font-bold tracking-wider font-mono-geist text-[#d0d6e0]">GLOBELINK</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 007.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"></path></svg>
+          <span class="text-xs font-bold tracking-wider font-mono-geist text-sky-800">ANDAKAMU</span>
         </div>
         <div class="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#d0d6e0]"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-          <span class="text-xs font-bold tracking-wider font-mono-geist text-[#d0d6e0]">APEX SYSTEMS</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          <span class="text-xs font-bold tracking-wider font-mono-geist text-sky-600">AMBISI KITA</span>
         </div>
         <div class="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#d0d6e0]"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          <span class="text-xs font-bold tracking-wider font-mono-geist text-[#d0d6e0]">BIO LABS</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          <span class="text-xs font-bold tracking-wider font-mono-geist text-slate-600">BANGUSMA</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Solusi Section -->
-  <section id="solusi" class="py-24 bg-[#08090a] border-b border-white/[0.05]">
+  <!-- Layanan Section (Instagram-aligned business services) -->
+  <section id="layanan" class="py-24 bg-white border-b border-sky-100">
     <div class="max-w-6xl mx-auto px-6">
       <div class="max-w-2xl mb-20">
-        <span class="text-xs font-semibold tracking-widest text-[#7170ff] uppercase mb-4 block font-mono-geist">KAPABILITAS UTAMA</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#f7f8f8] mb-4">
-          Teknologi Skala Enterprise, Dirancang Sesuai Target Bisnis Anda.
+        <span class="text-xs font-semibold tracking-widest text-sky-600 uppercase mb-4 block font-mono-geist">LAYANAN KAMI</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+          Solusi Software yang Langsung Dipakai, Bukan Cuma Dilihat.
         </h2>
-        <p class="text-[#d0d6e0] leading-relaxed">
-          Kami memangkas kompleksitas infrastruktur TI dengan solusi terarah dan terstruktur.
+        <p class="text-slate-600 leading-relaxed">
+          Semua layanan dirancang agar bisnis Anda beroperasi lebih cepat, lebih rapi, dan lebih mudah dijalankan hari ini.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-white/[0.02] border border-white/[0.08] text-[#7170ff] rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"/></svg>
           </div>
-          <h3 class="text-base font-semibold text-[#f7f8f8] mb-3">Custom Enterprise Software</h3>
-          <p class="text-[#8a8f98] text-xs leading-relaxed">
-            Pengembangan sistem web core dan internal tooling yang dirancang spesifik untuk alur kerja perusahaan Anda.
+          <h3 class="text-base font-bold text-slate-900 mb-3">Website Profesional</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Pembuatan website company, landing page, dan toko online yang responsive serta mudah dikelola.
           </p>
         </div>
 
         <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-white/[0.02] border border-white/[0.08] text-[#7170ff] rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h2m4 0h6m-10 4h10M5 6l14 12"/></svg>
           </div>
-          <h3 class="text-base font-semibold text-[#f7f8f8] mb-3">Cloud Infrastructure & DevOps</h3>
-          <p class="text-[#8a8f98] text-xs leading-relaxed">
-            Arsitektur cloud scalable berbasis Kubernetes, Terraform, dan cloud platform global dengan optimasi biaya maksimal.
+          <h3 class="text-base font-semibold text-slate-900 mb-3">Aplikasi Kasir</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Sistem kasir (POS) untuk warung hingga cafe dengan laporan penjualan otomatis, multi-user, dan QRIS.
           </p>
         </div>
 
         <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-white/[0.02] border border-white/[0.08] text-[#7170ff] rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2"/></svg>
+          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10a2 2 0 002 2h12a2 2 0 002-2V7M4 7a2 2 0 012-2h12a2 2 0 012 2M4 7l4 6m12-6l-4 6m-8 0h8"/></svg>
           </div>
-          <h3 class="text-base font-semibold text-[#f7f8f8] mb-3">Business Intelligence & Analytics</h3>
-          <p class="text-[#8a8f98] text-xs leading-relaxed">
-            Integrasi dashboard data, ETL pipeline, dan data warehousing untuk pengambilan keputusan berbasis metrik riil.
+          <h3 class="text-base font-semibold text-sky-900 mb-3">Manajemen Inventory</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Pantau stok barang real-time, dapat notifikasi stok menipis, dan hindari kehabisan produk.
+          </p>
+        </div>
+
+        <div class="level-2-card p-8 rounded-lg">
+          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9h8M8 13h5M3 5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H8l-5 4V5z"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-sky-900 mb-3">WhatsApp Marketing & CRM</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Atur broadcast promosi, simpan data pelanggan, dan kelola pesanan langsung dari WhatsApp.
+          </p>
+        </div>
+
+        <div class="level-2-card p-8 rounded-lg">
+          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-sky-900 mb-3">Digital Marketing Tools</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Landing page produk, promo, dan integrasi analytics supaya promosi Anda terukur hasilnya.
+          </p>
+        </div>
+
+        <div class="level-2-card p-8 rounded-lg">
+          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.864 9.864 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-sky-900 mb-3">Support & Maintenance</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Pendampingan bulanan, update sistem, backup data, dan training tim agar operasional tetap lancar.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Metodologi Section -->
-  <section id="metode" class="py-24 bg-[#08090a] border-b border-white/[0.05]">
+  <!-- Cara Kerja -->
+  <section id="cara" class="py-24 bg-[#f8fafc] border-b border-sky-100">
     <div class="max-w-6xl mx-auto px-6">
       <div class="max-w-2xl mb-20">
-        <span class="text-xs font-semibold tracking-widest text-[#7170ff] uppercase mb-4 block font-mono-geist">BAGAIMANA KAMI BEKERJA</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#f7f8f8] mb-4">
-          Metodologi yang Mementingkan Kualitas & Kecepatan Delivery
+        <span class="text-xs font-semibold tracking-widest text-sky-600 uppercase mb-4 block font-mono-geist">CARA KERJA</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+          Mulai Konsultasi, Selesai Dalam Waktu Singkat.
         </h2>
-        <p class="text-[#d0d6e0] leading-relaxed">
-          Kami menggunakan pendekatan iteratif untuk meminimalisasi risiko kegagalan proyek dan memaksimalkan ROI.
+        <p class="text-slate-600 leading-relaxed">
+          Proses simple, transparan, dan kami dampingi sampai bisnis Anda lancar.
         </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="relative bg-white/[0.02] border border-white/[0.08] p-8 rounded-lg shadow-sm">
-          <div class="text-2xl font-extrabold text-[#7170ff] font-mono-geist mb-4">01</div>
-          <h3 class="text-base font-semibold text-[#f7f8f8] mb-2">Discovery & Blueprint</h3>
-          <p class="text-[#8a8f98] text-xs leading-relaxed">
-            Menganalisis sistem berjalan, kebutuhan arsitektur, dan menyusun blueprint spesifikasi teknis sebelum coding dimulai.
+        <div class="bg-white border border-sky-200 p-8 rounded-lg shadow-sm">
+          <div class="text-2xl font-extrabold text-sky-200 font-mono-geist mb-4">01</div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Curhat & Analisis Kebutuhan</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Kami dengar kebutuhan bisnis Anda dan analisis area mana yang perlu solusi digital.
           </p>
         </div>
-
-        <div class="relative bg-white/[0.02] border border-white/[0.08] p-8 rounded-lg shadow-sm">
-          <div class="text-2xl font-extrabold text-[#7170ff] font-mono-geist mb-4">02</div>
-          <h3 class="text-base font-semibold text-[#f7f8f8] mb-2">Iterative Development</h3>
-          <p class="text-[#8a8f98] text-xs leading-relaxed">
-            Proses development transparan berbasis Agile Sprint dengan demo produk periodik tiap 2 minggu.
+        <div class="bg-white border border-sky-200 p-8 rounded-lg shadow-sm">
+          <div class="text-2xl font-extrabold text-sky-600 font-mono-geist mb-4">02</div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Build & Uji Coba</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Sistem dibuat dengan cepat, Anda bisa ikut uji coba dan memberi masukan langsung.
           </p>
         </div>
-
-        <div class="relative bg-white/[0.02] border border-white/[0.08] p-8 rounded-lg shadow-sm">
-          <div class="text-2xl font-extrabold text-[#7170ff] font-mono-geist mb-4">03</div>
-          <h3 class="text-base font-semibold text-[#f7f8f8] mb-2">Continuous CI/CD Delivery</h3>
-          <p class="text-[#8a8f98] text-xs leading-relaxed">
-            Penerapan otomatisasi pengujian kode dan deployment pipeline instan ke lingkungan cloud secara aman.
+        <div class="bg-white border border-sky-200 p-8 rounded-lg shadow-sm">
+          <div class="text-2xl font-extrabold text-sky-600 font-mono-geist mb-4">03</div>
+          <h3 class="text-base font-semibold text-slate-900 mb-2">Deploy & Dampingi</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Sistem langsung jalan, kami bantu training dan maintenance selama masa kontrak.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tentang Section -->
-  <section id="tentang" class="py-24 bg-[#08090a] border-b border-white/[0.05]">
+  <!-- Tentang -->
+  <section id="tentang" class="py-24 bg-white border-b border-sky-100">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
       <div class="md:col-span-6">
-        <span class="text-xs font-semibold tracking-widest text-[#7170ff] uppercase mb-4 block font-mono-geist">TENTANG ARSTECH</span>
-        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[#f7f8f8] mb-6">
-          Kombinasi Rekayasa Perangkat Lunak dan Strategi Bisnis Terintegrasi
+        <span class="text-xs font-semibold tracking-widest text-sky-600 uppercase mb-4 block font-mono-geist">TENTANG ARSTECH</span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
+          Tim Kecil yang Berfokus Membantu Umkm & Perusahaan.
         </h2>
-        <p class="text-[#8a8f98] leading-relaxed mb-6 text-sm">
-          Kami didirikan untuk memecahkan masalah integrasi teknologi yang lambat dan kompleks di pasar modern. Dengan tim software engineer dan arsitek infrastruktur berpengalaman, kami fokus pada kode bersih, performa tinggi, dan ketahanan sistem jangka panjang.
+        <p class="text-slate-600 leading-relaxed mb-6 text-sm">
+          Arstech dibangun untuk membawa solusi teknologi yang sederhana, terjangkau, dan benar-benar dipakai oleh pemilik bisnis. Kami tidak berbelit-belit; kami bantu dari pembuatan sistem sampai operasional harian.
         </p>
-        
-        <div class="grid grid-cols-2 gap-8 border-t border-white/[0.05] pt-8">
+        <div class="grid grid-cols-2 gap-8 border-t border-sky-100 pt-8">
           <div>
-            <div class="text-2xl font-extrabold text-[#f7f8f8] font-mono-geist">100%</div>
-            <p class="text-[10px] text-[#8a8f98] font-mono-geist uppercase mt-2">Delivery Success Rate</p>
+            <div class="text-2xl font-extrabold text-slate-900 font-mono-geist">150+</div>
+            <p class="text-[10px] text-slate-500 font-mono-geist uppercase mt-2">Klien Bisnis Terbantu</p>
           </div>
           <div>
-            <div class="text-2xl font-extrabold text-[#f7f8f8] font-mono-geist">50+</div>
-            <p class="text-[10px] text-[#8a8f98] font-mono-geist uppercase mt-2">Enterprise Systems Handled</p>
+            <div class="text-2xl font-extrabold text-slate-900 font-mono-geist">4.8/5</div>
+            <p class="text-[10px] text-slate-500 font-mono-geist uppercase mt-2">Rating Kepuasan</p>
           </div>
         </div>
       </div>
-
-      <div class="md:col-span-6 bg-white/[0.02] border border-white/[0.08] p-8 rounded-2xl">
-        <span class="text-xs font-semibold text-[#8a8f98] font-mono-geist uppercase block mb-6">SPESIFIKASI STACK KAMI</span>
+      <div class="md:col-span-6 bg-sky-50 border border-sky-100 p-8 rounded-2xl">
+        <span class="text-xs font-semibold text-slate-500 font-mono-geist uppercase block mb-6">BIDANG USAHA YANG KAMI LAYANI</span>
         <div class="grid grid-cols-2 gap-4">
-          <div class="bg-[#08090a] border border-white/[0.08] p-4 rounded text-center">
-            <span class="text-xs font-semibold text-[#f7f8f8]">Go / Gin</span>
+          <div class="bg-white border border-sky-200 p-4 rounded text-center">
+            <span class="text-xs font-semibold text-slate-800">Kuliner & Cafe</span>
           </div>
-          <div class="bg-[#08090a] border border-white/[0.08] p-4 rounded text-center">
-            <span class="text-xs font-semibold text-[#f7f8f8]">NodeJS / NextJS</span>
+          <div class="bg-white border border-sky-200 p-4 rounded text-center">
+            <span class="text-xs font-semibold text-slate-800">Retail & Toko</span>
           </div>
-          <div class="bg-[#08090a] border border-white/[0.08] p-4 rounded text-center">
-            <span class="text-xs font-semibold text-[#f7f8f8]">PostgreSQL</span>
+          <div class="bg-white border border-sky-200 p-4 rounded text-center">
+            <span class="text-xs font-semibold text-slate-800">Jasa & Service</span>
           </div>
-          <div class="bg-[#08090a] border border-white/[0.08] p-4 rounded text-center">
-            <span class="text-xs font-semibold text-[#f7f8f8]">Docker & Kubernetes</span>
+          <div class="bg-white border border-sky-200 p-4 rounded text-center">
+            <span class="text-xs font-semibold text-slate-800">Online Shop & Dropship</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA / Kontak Section -->
-  <section id="kontak" class="py-24 bg-white/[0.01] border-b border-white/[0.05]">
+  <!-- CTA / Kontak -->
+  <section id="kontak" class="py-24 bg-sky-700">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <span class="text-xs font-semibold tracking-widest text-[#7170ff] uppercase mb-4 block font-mono-geist">MULAI KOLABORASI</span>
-      <h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6 text-[#f7f8f8]">
-        Mari Bangun Infrastruktur Digital yang Tangguh Bersama Kami.
+      <span class="text-xs font-semibold tracking-widest text-sky-200 uppercase mb-4 block font-mono-geist">MULAI SEKARANG</span>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
+        Siap Bawa Bisnis Anda ke Era Digital?
       </h2>
-      <p class="text-[#8a8f98] text-base leading-relaxed mb-10 max-w-[60ch] mx-auto">
-        Kirimkan kebutuhan bisnis atau proposal proyek Anda. Tim teknis kami siap memformulasikan solusi terbaik.
+      <p class="text-sky-100 text-base leading-relaxed mb-10 max-w-[60ch] mx-auto">
+        Konsultasi gratis dan tanpa kewajiban. Ceritakan kebutuhan Anda, tim kami siap membantu.
       </p>
-      
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="mailto:info@arstech.my.id" class="bg-white hover:bg-zinc-100 text-zinc-950 font-medium text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2">
+        <a href="mailto:info@arstech.my.id" class="bg-white hover:bg-slate-100 text-sky-800 font-medium text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           Hubungi via Email
         </a>
-        <a href="https://wa.me/62812345678" class="bg-[#5e6ad2] hover:bg-[#7170ff] text-white font-medium text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2">
+        <a href="https://wa.me/62812345678" class="bg-sky-800 hover:bg-sky-900 text-white font-medium text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           Hubungi via WhatsApp
         </a>
@@ -327,18 +323,24 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#08090a] py-12 text-[#8a8f98] border-t border-white/[0.05]">
+  <footer class="bg-sky-950 py-12 text-sky-300/70 border-t border-sky-900">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex items-center gap-2">
-        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 14C4 10 7 10 16 10C25 10 28 10 28 14H4Z" fill="#7170ff"/>
-          <path d="M6 14H26V18C26 22 22 26 16 26C10 26 6 22 6 18V14Z" fill="#06b6d4" fill-opacity="0.85"/>
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 14C4 10 7 10 16 10C25 10 28 10 28 14H4Z" fill="#38bdf8"/>
+          <path d="M6 14H26V18C26 22 22 26 16 26C10 26 6 22 6 18V14Z" fill="#38bdf8" fill-opacity="0.85"/>
         </svg>
-        <span class="text-xs font-bold text-white font-mono-geist">ARSTECH</span>
+        <span class="text-sm font-bold text-white font-mono-geist">ARSTECH</span>
       </div>
       <p class="text-xs">&copy; 2026 Arstech. Semua Hak Dilindungi.</p>
+      <div class="flex items-center gap-6">
+        <a href="https://www.instagram.com/arstechid/" class="text-sky-300/60 hover:text-white transition"><i class="fab fa-instagram" style="font-size:1rem;"></i></a>
+        <a href="#" class="text-sky-300/60 hover:text-white transition"><i class="fab fa-whatsapp" style="font-size:1rem;"></i></a>
+      </div>
     </div>
   </footer>
 
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </body>
 </html>
