@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arstech - Software & Digital Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .font-outfit { font-family: 'Outfit', sans-serif; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+    .card:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.12); transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: white; padding: 12px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; }
+    .btn-primary:hover { box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); transform: translateY(-2px); }
+    .btn-secondary { background: #f3f4f6; color: #1f2937; padding: 12px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 2px solid #e5e7eb; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; }
+    .btn-secondary:hover { background: white; border-color: #3b82f6; color: #3b82f6; }
+    .section { padding: 80px 0; }
+    .icon-disk { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; color: white; border-radius: 12px; font-size: 28px; }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold font-outfit gradient-text">Arstech</div>
+      <div class="flex gap-8 items-center">
+        <a href="#solusi" class="text-sm text-slate-600 hover:text-blue-600 transition">Solusi</a>
+        <a href="#tentang" class="text-sm text-slate-600 hover:text-blue-600 transition">Tentang</a>
+        <a href="#kontak" class="btn-primary text-sm">Hubungi Kami</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-40 pb-20 bg-gradient-to-br from-blue-50 via-white to-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-block mb-6 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+          <i class="fas fa-star mr-2"></i>Partner Teknologi Terpercaya
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold font-outfit mb-6 text-slate-900 leading-tight">
+          Solusi Digital untuk <span class="gradient-text">Bisnis Anda</span>
+        </h1>
+        <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+          Kami menyediakan layanan software development, konsultasi IT, dan digital transformation untuk membantu bisnis Anda berkembang pesat di era digital.
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="#kontak" class="btn-primary text-lg"><i class="fas fa-paper-plane"></i> Dapatkan Proposal</a>
+          <a href="#solusi" class="btn-secondary text-lg"><i class="fas fa-arrow-right"></i> Lihat Solusi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solusi Section -->
+  <section id="solusi" class="section bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl font-bold font-outfit text-slate-900 mb-4">Solusi Kami</h2>
+        <p class="text-lg text-slate-600">Layanan lengkap untuk transformasi digital perusahaan Anda</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#3b82f6"><i class="fas fa-code"></i></div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Custom Software Development</h3>
+          <p class="text-slate-600 text-sm">Aplikasi web, mobile, dan desktop sesuai kebutuhan bisnis Anda dengan teknologi terkini.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#06b6d4"><i class="fas fa-cloud"></i></div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Cloud Solutions</h3>
+          <p class="text-slate-600 text-sm">Infrastruktur cloud yang aman, scalable, dan cost-effective untuk operasional bisnis.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#f59e0b"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Cybersecurity</h3>
+          <p class="text-slate-600 text-sm">Perlindungan data dan sistem informasi dari ancaman cyber dengan standar internasional.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#10b981"><i class="fas fa-chart-line"></i></div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Business Intelligence</h3>
+          <p class="text-slate-600 text-sm">Analytics dan insights mendalam untuk pengambilan keputusan bisnis yang lebih baik.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#8b5cf6"><i class="fas fa-cog"></i></div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">IT Consulting</h3>
+          <p class="text-slate-600 text-sm">Konsultasi strategis untuk optimasi IT, transformasi digital, dan modernisasi sistem.</p>
+        </div>
+        <div class="card p-8">
+          <div class="icon-disk mb-4" style="background:#ec4899"><i class="fas fa-headset"></i></div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">Support & Maintenance</h3>
+          <p class="text-slate-600 text-sm">Tim support 24/7 untuk memastikan sistem Anda selalu berjalan optimal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Section -->
+  <section id="tentang" class="section bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold font-outfit text-slate-900 mb-6">Tentang Arstech</h2>
+          <p class="text-lg text-slate-600 mb-4 leading-relaxed">
+            Arstech adalah perusahaan teknologi yang berfokus pada pengembangan solusi software berkualitas tinggi dan layanan IT profesional. Dengan pengalaman bertahun-tahun, kami telah membantu ratusan perusahaan mencapai tujuan digital mereka.
+          </p>
+          <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+            Tim expert kami terdiri dari software engineer, architect, dan consultant yang berpengalaman dalam berbagai industri dan teknologi.
+          </p>
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold font-outfit gradient-text">100+</div>
+              <p class="text-sm text-slate-600 mt-2">Projects Done</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold font-outfit gradient-text">50+</div>
+              <p class="text-sm text-slate-600 mt-2">Happy Clients</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold font-outfit gradient-text">15+</div>
+              <p class="text-sm text-slate-600 mt-2">Team Members</p>
+            </div>
+          </div>
+          <a href="#kontak" class="btn-primary text-lg"><i class="fas fa-handshake"></i> Mari Berkolaborasi</a>
+        </div>
+        <div>
+          <div class="space-y-6">
+            <div class="card p-8 border-l-4 border-blue-500">
+              <h3 class="text-lg font-bold mb-2 text-slate-900">Expertise</h3>
+              <p class="text-slate-600">Full-stack development, cloud architecture, AI/ML, blockchain, dan IoT solutions.</p>
+            </div>
+            <div class="card p-8 border-l-4 border-cyan-500">
+              <h3 class="text-lg font-bold mb-2 text-slate-900">Metodologi</h3>
+              <p class="text-slate-600">Agile, Scrum, DevOps best practices untuk delivery yang cepat dan berkualitas.</p>
+            </div>
+            <div class="card p-8 border-l-4 border-blue-400">
+              <h3 class="text-lg font-bold mb-2 text-slate-900">Komitmen</h3>
+              <p class="text-slate-600">Kepuasan client, inovasi berkelanjutan, dan partnership jangka panjang.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="kontak" class="section bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold font-outfit mb-4">Siap Berkembang Bersama Kami?</h2>
+      <p class="text-xl mb-8 text-blue-100">Konsultasikan kebutuhan bisnis digital Anda dengan tim expert kami.</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="mailto:info@arstech.my.id" class="bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition inline-flex items-center gap-2">
+          <i class="fas fa-envelope"></i> Kirim Email
+        </a>
+        <a href="https://wa.me/62812345678" class="bg-blue-500 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-400 transition inline-flex items-center gap-2">
+          <i class="fas fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-bold mb-4">Arstech</h3>
+          <p class="text-sm">Partner teknologi untuk transformasi digital bisnis Anda.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Solusi</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Software Development</a></li>
+            <li><a href="#" class="hover:text-white transition">Cloud Services</a></li>
+            <li><a href="#" class="hover:text-white transition">IT Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Perusahaan</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition">Karir</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Kontak</h4>
+          <p class="text-sm mb-2">info@arstech.my.id</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-slate-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 flex justify-between items-center">
+        <p class="text-sm">&copy; 2024 Arstech. All rights reserved.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
