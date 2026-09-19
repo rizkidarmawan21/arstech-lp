@@ -13,9 +13,72 @@ This file is the **implementation spec for the website**. It is deliberately sep
 
 Everything visual here is an application of `design.md`. When the two disagree, `design.md` wins. Nothing in this file should be copied to another surface; another surface gets its own spec.
 
-**Files in this project:** `index.html`, `assets/css/styles.css`, `assets/js/main.js`, `Dockerfile`.
-
 **Vocabulary.** `R-XX` cites a rule from the antislop filter. `[REAL DATA]` and `[CLIENT]` are honest placeholders (see 7).
+
+### 0.1 How the site is built
+
+The site is assembled by `build.py`. Pages are never edited as final HTML.
+
+```
+src/
+  layout.html                     the shell: head, main, script tags
+  partials/header.html            shared header and mobile menu
+  partials/footer.html            shared footer
+  pages/**/*.html                 front matter plus page body
+build.py                          assembles src/ into the repository root
+```
+
+```
+python3 build.py
+```
+
+**Why.** The header and footer were previously copied into every page. Five copies drifted within a day: the home page said "Capabilities" and the blog said "Kapabilitas", because there was no single source. With thirty planned URLs, hand-copying is not maintainable. Now the header exists once.
+
+**What the script does**
+
+- Wraps each page body in `layout.html` with both partials.
+- Computes `{{base}}`, the path prefix back to the root, from the page's depth. No page can get its asset path wrong.
+- Marks the current section in the nav via the page's `section` front-matter value, then strips the helper attribute.
+- Computes `{{reading_time}}` from the real word count at 200 words per minute, so a reading time can never be a guess that drifts from the text.
+- Regenerates `sitemap.xml` from the pages, so a URL cannot be listed unless it exists.
+- **Fails the build** if a page has no body, no `jsonld`, no `title`, `description`, or `canonical`, an unfilled placeholder, a `section` that matches no nav item, or a number of `<h1>` elements other than one.
+
+Those checks exist because the first version of this script silently shipped two blank pages and unwrapped JSON-LD in the head. It built successfully and looked fine in a file listing. A build that cannot fail loudly is not a build.
+
+**Front matter**
+
+```
+lang: en                                  default: en
+title: ...                                required, under ~60 characters
+description: ...                          required, under ~155 characters
+canonical: https://arstech.my.id/...      required
+robots: index, follow, ...                default: index, follow, max-image-preview:large
+og_type: website                          default: website
+og_locale: en_US                          default: en_US
+og_title / og_description                 default: title / description
+section: blog                             optional, marks the nav item
+sitemap: false                            optional, excludes the page from the sitemap
+changefreq / priority / lastmod           optional, sitemap hints
+footer_href / footer_label                optional, override the footer bottom link
+jsonld: |                                 required, the JSON-LD graph, unwrapped
+```
+
+**Output and deployment.** `build.py` writes plain static HTML to the repository root.
+
+The Dockerfile is **two stages**, so the site is assembled inside the image:
+
+1. `python:3.13-alpine` copies `build.py` and `src/`, runs the build.
+2. `nginx:alpine` copies the generated HTML from stage 1, plus the static `robots.txt` and `assets/`, and applies `nginx.conf`.
+
+Consequences worth knowing:
+
+- **Nothing has to be built by hand before deploying.** Whatever a Docker host builds, Dokploy included, is derived from `src/` and therefore current. If `src/` changes and the committed HTML does not, the deploy is still correct.
+- **A broken page fails the image build.** `build.py` exits non-zero on an empty body, a missing required field, an unfilled placeholder, or anything other than one `<h1>`, so a bad page cannot reach production.
+- **Editing `index.html` or `blog/` directly has no effect on the deployed site.** The image regenerates them. Every generated file carries a comment saying so. The committed output exists for local preview and for hosting without Docker, and `python3 build.py --check` reports when it has fallen behind `src/`.
+- **`nginx.conf` sets gzip, cache lifetimes, two security headers, and real 404s.** It deliberately does not set HSTS: TLS terminates at the proxy in front of the container, so that belongs there. It also deliberately has no SPA fallback, because answering 200 for a missing page is a soft 404.
+- **The container listens on port 80.** That is the port to configure in Dokploy.
+
+**Files in this project:** `src/` (source), `build.py`, `nginx.conf`, `.dockerignore`, `index.html`, `blog/`, `assets/css/styles.css`, `assets/js/main.js`, `robots.txt`, `sitemap.xml`, `Dockerfile`.
 
 ---
 

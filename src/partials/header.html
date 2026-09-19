@@ -1,0 +1,40 @@
+<!-- Shared header. Edit once, every page follows.
+     {{base}} is the path prefix back to the site root, filled in by build.py
+     from the page's depth, so no page can get the asset path wrong. -->
+<header class="header" id="site-header">
+  <div class="container header__inner">
+    <a class="logo logo--full" href="{{base}}index.html" aria-label="Arstech, home">
+      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M16 3.5 L29.5 28.5 H22.6 L16 15.3 L9.4 28.5 H2.5 Z"/>
+        <rect x="10.6" y="21.2" width="10.8" height="3.2" rx="0.4"/>
+      </svg>
+      <span class="logo__word">Arstech</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="{{base}}index.html#capabilities">Capabilities</a>
+      <a class="nav-link" href="{{base}}index.html#process">Process</a>
+      <a class="nav-link" href="{{base}}index.html#studio">Studio</a>
+      <a class="nav-link" href="{{base}}blog/" data-nav="blog">Articles</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--primary btn--md header__cta" href="{{base}}index.html#contact">Start a project</a>
+      <button class="menu-toggle" type="button" id="menu-toggle"
+              aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__nav" aria-label="Primary mobile">
+    <a class="mobile-menu__link" href="{{base}}index.html#capabilities">Capabilities</a>
+    <a class="mobile-menu__link" href="{{base}}index.html#process">Process</a>
+    <a class="mobile-menu__link" href="{{base}}index.html#studio">Studio</a>
+    <a class="mobile-menu__link" href="{{base}}blog/">Articles</a>
+    <a class="mobile-menu__link" href="{{base}}index.html#contact">Contact</a>
+  </nav>
+  <a class="btn btn--primary btn--md mobile-menu__cta" href="{{base}}index.html#contact">Start a project</a>
+</div>

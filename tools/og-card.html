@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arstech social card</title>
+<!--
+  Source for assets/og-card.png, the 1200x630 social card.
+
+  This is a design asset, not part of the site build: the Docker build has no
+  browser, so the PNG is generated here and committed. Regenerate with:
+
+    tools/make-og-card.sh
+
+  Colours and type come from design.md section 3 and 4, so the card cannot
+  drift from the brand.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #071A3D;
+    --blue: #087CFF;
+    --blue-light: #31B7FF;
+    --on-dark: #FFFFFF;
+    --on-dark-muted: #C9D6E8;
+    --on-dark-faint: #9FB3CC;
+    --navy-line: rgba(255, 255, 255, 0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+
+  body {
+    background: var(--navy);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--on-dark);
+    position: relative;
+    padding: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The rail motif, kept faint so it reads as structure, not decoration. */
+  .rail {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.55;
+  }
+
+  .brand { display: flex; align-items: center; gap: 14px; position: relative; }
+
+  .brand svg { width: 44px; height: 44px; fill: var(--blue-light); flex: none; }
+
+  .brand span {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    position: relative;
+    max-width: 820px;
+    font-size: 66px;
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .foot {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 26px;
+    border-top: 1px solid var(--navy-line);
+    font-size: 22px;
+  }
+
+  .foot .tagline { color: var(--on-dark-muted); font-weight: 500; }
+  .foot .domain { color: var(--on-dark-faint); font-weight: 500; letter-spacing: 0.01em; }
+</style>
+</head>
+<body>
+
+  <svg class="rail" width="520" height="430" viewBox="0 0 520 430" fill="none" aria-hidden="true">
+    <line x1="260" y1="215" x2="100" y2="80"  stroke="rgba(255,255,255,0.13)" stroke-width="1.5"/>
+    <line x1="260" y1="215" x2="420" y2="80"  stroke="rgba(255,255,255,0.13)" stroke-width="1.5"/>
+    <line x1="260" y1="215" x2="75"  y2="220" stroke="rgba(255,255,255,0.13)" stroke-width="1.5"/>
+    <line x1="260" y1="215" x2="445" y2="220" stroke="rgba(255,255,255,0.13)" stroke-width="1.5"/>
+    <line x1="260" y1="215" x2="260" y2="380" stroke="rgba(255,255,255,0.13)" stroke-width="1.5"/>
+    <circle cx="100" cy="80"  r="5" fill="rgba(49,183,255,0.55)"/>
+    <circle cx="420" cy="80"  r="5" fill="rgba(49,183,255,0.55)"/>
+    <circle cx="75"  cy="220" r="5" fill="rgba(49,183,255,0.55)"/>
+    <circle cx="445" cy="220" r="5" fill="rgba(49,183,255,0.55)"/>
+    <circle cx="260" cy="380" r="5" fill="rgba(49,183,255,0.55)"/>
+    <circle cx="260" cy="215" r="9" fill="rgba(49,183,255,0.9)"/>
+  </svg>
+
+  <div class="brand">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 3.5 L29.5 28.5 H22.6 L16 15.3 L9.4 28.5 H2.5 Z"/>
+      <rect x="10.6" y="21.2" width="10.8" height="3.2" rx="0.4"/>
+    </svg>
+    <span>Arstech</span>
+  </div>
+
+  <h1>We build digital systems that move businesses forward.</h1>
+
+  <div class="foot">
+    <span class="tagline">Built to Innovate.</span>
+    <span class="domain">arstech.my.id</span>
+  </div>
+
+</body>
+</html>

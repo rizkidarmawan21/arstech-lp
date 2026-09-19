@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# No crawl restrictions yet. Once the Indonesian and English trees exist,
+# keep this open: the hreflang annotations are what separate the two
+# languages, not blocking.
+
+Sitemap: https://arstech.my.id/sitemap.xml
