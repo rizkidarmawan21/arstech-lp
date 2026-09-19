@@ -1,0 +1,13 @@
+# Keep the build context small. src/ and build.py must stay: stage 1 of the
+# Dockerfile builds the site from them.
+.git
+.gitignore
+.workbuddy-ai
+**/.DS_Store
+node_modules
+*.log
+
+# Documentation, not part of the image
+design.md
+website-spec.md
+seo-strategy.md
