@@ -1,329 +1,631 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arstech - Digital Systems & Software Engineering</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-feature-settings: "cv01" 1, "ss03" 1;
-      background-color: #f8fafc;
-      color: #0f172a;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    .font-mono-geist { font-family: 'JetBrains Mono', monospace; }
-    .level-2-card {
-      background-color: #ffffff;
-      border: 1px solid rgba(2, 132, 199, 0.12);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .level-2-card:hover {
-      border-color: rgba(2, 132, 199, 0.35);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.06);
-    }
-    .hero-console {
-      background: #ffffff;
-      border: 1px solid rgba(2, 132, 199, 0.18);
-      box-shadow: 0 20px 50px rgba(2, 132, 199, 0.08);
-    }
-  </style>
+<html lang="en" class="no-js" data-page-node-id="mEMSLGYbWavtFXsFl14xMJ">
+<head data-page-node-id="MLbjdgyd2DLROgLZgWdELJ">
+<meta charset="UTF-8" data-page-node-id="mGGEmYlgaaGHDdQITmWkHw">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="mdgfK7qtqojcxefDTWhEq6">
+<title>Arstech: custom software, AI systems, and integrations</title>
+<meta name="description" content="Arstech designs and builds custom software, AI systems, and integrations for growing businesses. Production-grade systems, delivered in short sprints." data-page-node-id="AyoEP2rghvZu3uR7OJaqmP">
+<meta name="theme-color" content="#F5F8FC" data-page-node-id="uEXMhNSZ3h6z5tABToWoDF">
+<meta property="og:title" content="Arstech: custom software, AI systems, and integrations" data-page-node-id="4dfTKstipqTiuBC40aXtCA">
+<meta property="og:description" content="We build digital systems that move businesses forward." data-page-node-id="1RO0G7Pm3qRidCHd8qwbiC">
+<meta property="og:type" content="website" data-page-node-id="QqGwf8kzmqXIfQLaJALJkk">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23071A3D'/%3E%3Cpath d='M16 6.5 L26 25.5 H20.6 L16 15.9 L11.4 25.5 H6 Z' fill='%23087CFF'/%3E%3C/svg%3E" data-page-node-id="1q83iz2IUH0RICI0hAWKQ4">
+<link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="FKCEoHWKFxiL5WocNgYMAp">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="HHmSkofcRv035aIzCQQbmn">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" data-page-node-id="m3g4MV6eJGWyU0qoVacpwS">
+<link rel="stylesheet" href="assets/css/styles.css" data-page-node-id="P2AU0rNAEVvkhpRMNOtTKO">
+<script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
-<body class="selection:bg-[#0284c7] selection:text-white">
+<body data-page-node-id="tfDhDksafMxejjhbDXElDj">
 
-  <!-- Header Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f8fafc]/80 backdrop-blur-md border-b border-sky-100">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <!-- Logo Awning Canopy + Cyan Basket (Manapos style) -->
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 14C4 10 7 10 16 10C25 10 28 10 28 14H4Z" fill="#0284c7"/>
-          <path d="M6 14H26V18C26 22 22 26 16 26C10 26 6 22 6 18V14Z" fill="#06b6d4" fill-opacity="0.85"/>
-        </svg>
-        <span class="text-lg font-semibold tracking-tight text-slate-900 font-mono-geist">ARSTECH</span>
-      </div>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-sky-600 transition">Services</a>
-        <a href="#process" class="text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-sky-600 transition">Process</a>
-        <a href="#about" class="text-xs font-semibold uppercase tracking-widest text-slate-500 hover:text-sky-600 transition">About</a>
-        <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-white bg-sky-600 px-4 py-2.5 rounded-md hover:bg-sky-700 transition">Contact Us</a>
-      </div>
+<a class="skip-link" href="#main" data-page-node-id="e1BVakzP2xyaSPRTbIa69M">Skip to content</a>
+
+<!-- ============================================================
+     1. HEADER
+     ============================================================ -->
+<header class="header" id="site-header" data-page-node-id="9w367BAPUsrLjlOe3vMXTJ">
+  <div class="container header__inner" data-page-node-id="0QAz9kr5tkIUR2hYUgFqM3">
+    <a class="logo logo--full" href="#top" aria-label="Arstech, home" data-page-node-id="djTdvwV7KmTw80zBsxojOP">
+      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false" data-page-node-id="XWN0rwkwjZPZmUli9cPPEv">
+        <path d="M16 3.5 L29.5 28.5 H22.6 L16 15.3 L9.4 28.5 H2.5 Z" data-page-node-id="ELadvpUg1TwHQm2RcifIAn"/>
+        <rect x="10.6" y="21.2" width="10.8" height="3.2" rx="0.4" data-page-node-id="efjW9wwzyBGGJzje0woEFV"/>
+      </svg>
+      <span class="logo__word" data-page-node-id="G8HvCZB38XqbxvyY0wygz9">Arstech</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary" data-page-node-id="t07zgmr5rFP3XW2F9HyJ7Z">
+      <a class="nav-link" href="#capabilities" data-page-node-id="l2uAeb8SXMifURj8jvpXNa">Capabilities</a>
+      <a class="nav-link" href="#process" data-page-node-id="PNCYBGzTlUQd9yh4mXQQq8">Process</a>
+      <a class="nav-link" href="#studio" data-page-node-id="J5KFdkW5jIgZYwK6ePFgkh">Studio</a>
+    </nav>
+
+    <div class="header__actions" data-page-node-id="TXa0SqYDmqkGIEaYHDLZT1">
+      <a class="btn btn--primary btn--md header__cta" href="#contact" data-page-node-id="gOrIQ1yIZn5GaHYemYARTw">Start a project</a>
+      <button class="menu-toggle" type="button" id="menu-toggle"
+              aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-page-node-id="nlJHxZcy8OoB3oNkj7C5vy">
+        <span class="menu-toggle__bars" aria-hidden="true" data-page-node-id="xbtKkpV0rMxe4GLwOg9mF7"><i data-page-node-id="zXs6dg4tESSJmF4r9SeNPf"></i><i data-page-node-id="f4HDA3Cgy2dhUHgtrE2L1N"></i></span>
+      </button>
     </div>
+  </div>
+</header>
+
+<!-- Mobile navigation drawer -->
+<div class="mobile-menu" id="mobile-menu" data-page-node-id="75QPsyk06PiX5Dq0FZCRfD">
+  <nav class="mobile-menu__nav" aria-label="Primary mobile" data-page-node-id="CXsj4CtqHe4AnjGSNcFliB">
+    <a class="mobile-menu__link" href="#capabilities" data-page-node-id="VcEffW8RA0tvrxsHDu3Q4B">Capabilities</a>
+    <a class="mobile-menu__link" href="#process" data-page-node-id="5GoOlB79YxcW5iDStPkGT1">Process</a>
+    <a class="mobile-menu__link" href="#studio" data-page-node-id="bNVF2Pdy8QhgSmit3ltG7l">Studio</a>
+    <a class="mobile-menu__link" href="#contact" data-page-node-id="UvRns4ri5WjcM4lEZogr6F">Contact</a>
   </nav>
+  <a class="btn btn--primary btn--md mobile-menu__cta" href="#contact" data-page-node-id="ES7G8q6hS1a3aUBsuvQQwo">Start a project</a>
+</div>
 
-  <!-- Hero Section (Light, Centered, Linear-style Vast) -->
-  <header class="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden pt-24 pb-12">
-    <div class="absolute top-[20%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-sky-200/40 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-    
-    <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-50 border border-sky-200 mb-8">
-        <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
-        <span class="text-[11px] font-medium tracking-wider uppercase text-sky-700 font-mono-geist">BUILT TO INNOVATE</span>
-      </div>
-      
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.03em] leading-[1.05] text-slate-900 max-w-[15ch] mb-8">
-        We Build Digital Systems That Move Businesses Forward
+<main id="main" data-page-node-id="5nq6IHoWoJ9OwEszmfmeJ4">
+
+<!-- ============================================================
+     2. HERO
+     ============================================================ -->
+<section class="hero" id="top" data-page-node-id="bPFL0kipMbXrzyUpBUCWtI">
+  <div class="container hero__grid" data-page-node-id="b3mDgViCTjy7VUiAqSG1P3">
+
+    <div class="hero__copy" data-page-node-id="XrdwMoeQTHXwmc9iHLkcJr">
+      <p class="kicker" data-reveal data-page-node-id="unLvVbD4AItSjLYaDp8ZTd">Software and AI systems studio</p>
+      <h1 class="hero__title" data-reveal data-reveal-delay="1" data-page-node-id="ggHahML0s8zcl0j2L8FH73">
+        We build digital systems that move businesses forward.
       </h1>
-      
-      <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-[55ch] leading-relaxed mb-10 font-light">
-        We develop customized software solutions and production-grade AI agent systems to optimize your business operations.
+      <p class="hero__lead" data-reveal data-reveal-delay="2" data-page-node-id="HzagW3rJcYMCSb5pyx6slo">
+        Arstech designs and ships custom software, AI systems, and integrations for growing
+        businesses. We work in short sprints, and we hand over systems you can run without us.
       </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto justify-center">
-        <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white font-medium text-sm px-8 py-3.5 rounded-md transition shadow-md shadow-sky-200">
-          Get in Touch
-        </a>
-        <a href="#services" class="bg-white border border-sky-200 hover:border-sky-400 hover:bg-sky-50 text-slate-700 font-medium text-sm px-8 py-3.5 rounded-md transition">
-          View Services
-        </a>
-      </div>
-
-      <!-- Light Interactive Console Mockup -->
-      <div class="w-full max-w-5xl mx-auto rounded-xl hero-console p-6">
-        <div class="flex items-center justify-between border-b border-sky-100 pb-4 mb-6">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-green-400/80"></span>
-          </div>
-          <span class="text-[10px] tracking-widest text-slate-400 font-mono-geist">ARSTECH CORE CONSOLE</span>
-          <span class="text-[10px] text-sky-700 font-mono-geist bg-sky-50 px-2 py-0.5 rounded">READY</span>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 text-left">
-          <div class="bg-sky-50/50 border border-sky-100 p-5 rounded">
-            <span class="text-[10px] tracking-wider text-slate-500 font-mono-geist uppercase block mb-1">SYSTEM LATENCY</span>
-            <div class="text-2xl font-bold text-sky-700 font-mono-geist mb-2">12.4 ms</div>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-mono-geist">OPTIMIZED</span>
-          </div>
-          <div class="bg-sky-50/50 border border-sky-100 p-5 rounded">
-            <span class="text-[10px] tracking-wider text-slate-500 font-mono-geist uppercase block mb-1">EXECUTION RATE</span>
-            <div class="text-2xl font-semibold text-sky-700 font-mono-geist mb-2">99.98%</div>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-mono-geist">ACTIVE</span>
-          </div>
-          <div class="bg-sky-50/50 border border-sky-100 p-5 rounded">
-            <span class="text-[10px] tracking-wider text-slate-500 font-mono-geist uppercase block mb-1">ACTIVE INSTANCES</span>
-            <div class="text-2xl font-semibold text-sky-700 font-mono-geist mb-2">18 Online</div>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-mono-geist">STABLE</span>
-          </div>
-        </div>
+      <div class="hero__actions" data-reveal data-reveal-delay="3" data-page-node-id="5zmWyFj7cTUBgJCaVy8vZ3">
+        <a class="btn btn--primary btn--lg" href="#contact" data-page-node-id="OIxtkz8ucXdC6x8dQeGN3d">Start a project</a>
+        <a class="btn btn--secondary btn--lg" href="#capabilities" data-page-node-id="BMuUBJ49dFafmB1HYdOoqz">See our capabilities</a>
       </div>
     </div>
-  </header>
 
-  <!-- Social Proof Strip -->
-  <section class="py-12 bg-white border-y border-sky-100">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="text-[10px] font-semibold text-slate-400 tracking-widest uppercase mb-8 text-center font-mono-geist">
-        TRUSTED TECHNOLOGY PARTNER FOR GROWING ENTERPRISES
-      </p>
-      <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70">
-        <div class="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 007.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"></path></svg>
-          <span class="text-xs font-bold tracking-wider font-mono-geist text-sky-800">GLOBELINK</span>
+    <!-- Interactive system diagram: the identity motif -->
+    <div class="hero__visual" data-reveal data-reveal-delay="2" data-page-node-id="Or0vGCryLgSI4SmVuGxZwj">
+      <figure class="diagram-figure" data-page-node-id="yjq5MgxCNQ1jS3X97J4q6D">
+        <div class="diagram" id="diagram" role="img"
+             aria-label="Diagram of the systems Arstech builds and connects: web platforms, backend APIs, AI systems, data pipelines, and integrations, all connected to a central Arstech core." data-page-node-id="x4sL0dDUvBjLmm2chewqXg">
+
+          <svg class="diagram__lines" viewBox="0 0 520 430" aria-hidden="true" focusable="false" data-page-node-id="SUWq7sGnCzfNDnr1FCTxYD">
+            <g class="diagram__rails">
+              <line class="diagram__link" data-link="web"         pathLength="100" x1="260" y1="215" x2="100" y2="80" data-page-node-id="cbxMhM8M7BmZjih4TxHYyQ"></line>
+              <line class="diagram__link" data-link="api"         pathLength="100" x1="260" y1="215" x2="420" y2="80" data-page-node-id="Ge5nPtiTv6G9zoGWHadlBf"></line>
+              <line class="diagram__link" data-link="ai"          pathLength="100" x1="260" y1="215" x2="75"  y2="220" data-page-node-id="CM1MinOclx0oyWEhy78bw8"></line>
+              <line class="diagram__link" data-link="data"        pathLength="100" x1="260" y1="215" x2="445" y2="220" data-page-node-id="tag68YRYZohpkAWWGeF8wK"></line>
+              <line class="diagram__link" data-link="integration" pathLength="100" x1="260" y1="215" x2="260" y2="380" data-page-node-id="tDK9zoE2G7DNpeleApVr4G"></line>
+            </g>
+            <g class="diagram__flows">
+              <line class="diagram__flow" data-link="web"         x1="260" y1="215" x2="100" y2="80"></line>
+              <line class="diagram__flow" data-link="api"         x1="260" y1="215" x2="420" y2="80"></line>
+              <line class="diagram__flow" data-link="ai"          x1="260" y1="215" x2="75"  y2="220"></line>
+              <line class="diagram__flow" data-link="data"        x1="260" y1="215" x2="445" y2="220"></line>
+              <line class="diagram__flow" data-link="integration" x1="260" y1="215" x2="260" y2="380"></line>
+            </g>
+          </svg>
+
+          <span class="diagram__hub" data-page-node-id="iqO4rtppxbCMjYVCUO8Vc8">Arstech core</span>
+
+          <button class="diagram__node" type="button" data-node="web"
+                  style="--x:19.2%; --y:18.6%"
+                  data-desc="Customer-facing sites and portals, built to load fast and convert." data-page-node-id="CgrhGfKOW5iURnWsuIIRF2">
+            <svg class="diagram__node-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4.5" width="18" height="15" rx="2.5"></rect>
+              <path d="M3 9.5h18"></path>
+              <path d="M9 9.5v10"></path>
+            </svg>
+            <span class="diagram__node-label" data-page-node-id="1cMtLV6MFvVTfkEwiVDaee">Web platforms</span>
+          </button>
+          <button class="diagram__node" type="button" data-node="api"
+                  style="--x:80.8%; --y:18.6%"
+                  data-desc="Backend services, endpoints, and the business logic behind them." data-page-node-id="eo7dElCshMVdwUY1z4rwgQ">
+            <svg class="diagram__node-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="6.5" rx="2"></rect>
+              <rect x="3" y="13.5" width="18" height="6.5" rx="2"></rect>
+              <path d="M6.5 7.25h2.5"></path>
+              <path d="M6.5 16.75h2.5"></path>
+            </svg>
+            <span class="diagram__node-label" data-page-node-id="Y3f6GdIWY5doTl3lIsPP7W">Custom APIs</span>
+          </button>
+          <button class="diagram__node" type="button" data-node="ai"
+                  style="--x:14.5%; --y:51.2%"
+                  data-desc="Agents and automation layers that take repeatable work off your team." data-page-node-id="ZFmrAVVuHuEqupZGaLo9JR">
+            <svg class="diagram__node-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="6" width="12" height="12" rx="2.5"></rect>
+              <rect x="10" y="10" width="4" height="4" rx="1"></rect>
+              <path d="M9.5 3v3"></path>
+              <path d="M14.5 3v3"></path>
+              <path d="M9.5 18v3"></path>
+              <path d="M14.5 18v3"></path>
+              <path d="M3 9.5h3"></path>
+              <path d="M3 14.5h3"></path>
+              <path d="M18 9.5h3"></path>
+              <path d="M18 14.5h3"></path>
+            </svg>
+            <span class="diagram__node-label" data-page-node-id="UhDA1G8FD8q3ngsCpENUZC">AI systems</span>
+          </button>
+          <button class="diagram__node" type="button" data-node="data"
+                  style="--x:85.5%; --y:51.2%"
+                  data-desc="Pipelines, storage, and reporting that keep one source of truth." data-page-node-id="g2KSzkkdTOWdnBVjxOILHF">
+            <svg class="diagram__node-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"></ellipse>
+              <path d="M4.5 5.5v13c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-13"></path>
+              <path d="M4.5 12c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8"></path>
+            </svg>
+            <span class="diagram__node-label" data-page-node-id="Kv5IAV6rVM61uxuv9SE0H6">Data pipelines</span>
+          </button>
+          <button class="diagram__node" type="button" data-node="integration"
+                  style="--x:50%; --y:88.4%"
+                  data-desc="The tools you already run, connected so data moves without manual work." data-page-node-id="EcBZ69i0E6Ebh2DD5SayGf">
+            <svg class="diagram__node-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2.5v5"></path>
+              <path d="M15 2.5v5"></path>
+              <path d="M6.5 7.5h11v3.5a5.5 5.5 0 0 1-11 0V7.5Z"></path>
+              <path d="M12 16.5v5"></path>
+            </svg>
+            <span class="diagram__node-label" data-page-node-id="8nHLS6k8SoiGEjpAsG6Lq8">Integrations</span>
+          </button>
         </div>
-        <div class="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-          <span class="text-xs font-bold tracking-wider font-mono-geist text-sky-600">APEX SYSTEMS</span>
+
+        <figcaption class="diagram__caption" id="diagram-caption" data-page-node-id="qOnsKvdXHrKjVRjjZzS0bH">
+          We connect the systems your business runs on.
+        </figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     3. CAPABILITY INDEX
+     ============================================================ -->
+<section class="section section--alt" id="capabilities" aria-labelledby="capabilities-title" data-page-node-id="TwhgcBuXs9T2NJ0Yir4doU">
+  <div class="container" data-page-node-id="9HwCf1go2fNTyDLXGV4Rhs">
+    <div class="capabilities-layout" data-page-node-id="wKyhiDq4buXdhaJcxJuxVu">
+
+      <div class="section-header section-header--stack capabilities-layout__head" data-reveal data-page-node-id="x5lBzy9lF6x8XgxBbwMuvn">
+        <div class="section-header__label" data-page-node-id="W8U71toc24FMGFXAUwUwS4">
+          <span class="index" aria-hidden="true" data-page-node-id="9OFvf00IJTb3fFdSYEo2xO">01</span>
+          <span class="label" data-page-node-id="EhzJoEaqQYDOd8B5HHwbjS">Capabilities</span>
         </div>
-        <div class="flex items-center gap-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-          <span class="text-xs font-bold tracking-wider font-mono-geist text-slate-600">BIO LABS</span>
+        <div class="section-header__body" data-page-node-id="TqyELBR4YMarD1fDcdCAGm">
+          <h2 id="capabilities-title" data-page-node-id="Ayu1LR6LkClogPEHZOXJ5r">Software and systems built around your operations</h2>
+          <p class="lead" data-page-node-id="Ojue09i2u9cGGqfzGIZBSe">
+            Four ways we remove the bottlenecks in how your business runs. Open one to see what
+            the engagement includes.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-24 bg-white border-b border-sky-100">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="max-w-2xl mb-20">
-        <span class="text-xs font-semibold tracking-widest text-sky-600 uppercase mb-4 block font-mono-geist">SERVICES</span>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
-          Software Solutions Engineered for Business Scale
-        </h2>
-        <p class="text-slate-600 leading-relaxed">
-          We develop clean, production-ready digital architectures designed to streamline your business execution.
+      <div class="capabilities" data-reveal data-page-node-id="DkRHGDZHazrUwdfLfpkr3H">
+
+      <article class="capability is-open" data-page-node-id="um3nz0NAXrOhvOKfroNDHa">
+        <h3 class="capability__heading" data-page-node-id="XtV4zHD1kgKjavaDlFpRoZ">
+          <button class="capability__trigger" type="button"
+                  aria-expanded="true" aria-controls="cap-panel-1" id="cap-trigger-1" data-page-node-id="eiG04uiB7SolJSSB68I8F1">
+            <span class="capability__index" aria-hidden="true" data-page-node-id="4DXPXCx9ZZD94uxh2aNsZz">01</span>
+            <span class="capability__title" data-page-node-id="jVXryesIlUgVV6iTaZFmBY">Custom software</span>
+            <span class="capability__summary" data-page-node-id="YrjlgddX4dW10xFEr74Rfx">Backend services, dashboards, and internal tools built for your operations.</span>
+            <span class="capability__toggle" aria-hidden="true" data-page-node-id="ZblbJzcJM27rAHoxQw9pGV"><i data-page-node-id="SXpQxnFvcG7IxuT2uf12dr"></i><i data-page-node-id="MhFtb1yYYO8gbECj99HKJX"></i></span>
+          </button>
+        </h3>
+        <div class="capability__panel" id="cap-panel-1" role="region" aria-labelledby="cap-trigger-1" data-page-node-id="HKPzDl2BMxvBQ4TpfXkoPH">
+          <div class="capability__panel-inner" data-page-node-id="4GhNtZXchK56P93wHIlnpk">
+            <p data-page-node-id="mPl3ugl4IAYmqQADn6bRn4">
+              When off-the-shelf tools force your process into their shape, we build the system
+              that fits. We start from the decisions your team makes every day, then design the
+              data and the interface around them.
+            </p>
+            <p class="capability__subhead" data-page-node-id="0BFSuI3yQiG0tcDHaxueFa">Included</p>
+            <ul class="check-list" data-page-node-id="gMVNbP9nPNlZKUqY54V4PA">
+              <li data-page-node-id="hAnDAqPfHEnJlZaIB3bvDX">API and service design</li>
+              <li data-page-node-id="6a8aMqm6qhbPnulBWeQzZq">Control dashboards and management portals</li>
+              <li data-page-node-id="c3SLuYU7MSA5oIu0fWkRPI">Database and domain modelling</li>
+              <li data-page-node-id="tttaLEh0njN33aMmdOTCyJ">Role-based access and audit trails</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="capability" data-page-node-id="AHskbZUq9aR3tC6gMUbG6O">
+        <h3 class="capability__heading" data-page-node-id="JcPFRcI1AZZOzZa0QQ2Iuz">
+          <button class="capability__trigger" type="button"
+                  aria-expanded="false" aria-controls="cap-panel-2" id="cap-trigger-2" data-page-node-id="tmepPFdUYpN1KCE9UFib04">
+            <span class="capability__index" aria-hidden="true" data-page-node-id="av3lBT9C8t0AIv2HO5CdSQ">02</span>
+            <span class="capability__title" data-page-node-id="g53zLV5fsDmDGME3Vlbehe">AI systems</span>
+            <span class="capability__summary" data-page-node-id="Dl3oECisbBIWgDScFv4csc">Agents and automation layers that handle repeatable work.</span>
+            <span class="capability__toggle" aria-hidden="true" data-page-node-id="bPEU27htmf9hvxwSiX1NWf"><i data-page-node-id="TjBh2pzzNy7dJpqAucaSPa"></i><i data-page-node-id="EOtdlKCttiKbvVa42ZXf5M"></i></span>
+          </button>
+        </h3>
+        <div class="capability__panel" id="cap-panel-2" role="region" aria-labelledby="cap-trigger-2" data-page-node-id="Rx6ITLdvt222BkjSb2oNiS">
+          <div class="capability__panel-inner" data-page-node-id="yQT7845u3A83dpYnwGcNy3">
+            <p data-page-node-id="CSBeEyxZeL2Z8idEZ0wPZi">
+              We add AI where it removes real work, not where it looks impressive. Every agent
+              ships with the evaluation and guardrails that let you trust it in production.
+            </p>
+            <p class="capability__subhead" data-page-node-id="LeJt1KRMQ3qMFc84eRArz1">Included</p>
+            <ul class="check-list" data-page-node-id="AuHLeH088ERqOtMweZXj6M">
+              <li data-page-node-id="YKanHqmyBVCG7sCpAHY7rm">Agent and workflow design</li>
+              <li data-page-node-id="nvCefbqSaEd09lzpzTnwui">LLM integration and prompt architecture</li>
+              <li data-page-node-id="TKYJlwWBeFheiwI4TDt57g">Evaluation sets and regression checks</li>
+              <li data-page-node-id="E9kNaDePZbE6numlRuOrIm">Guardrails, logging, and cost controls</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="capability" data-page-node-id="CaVSCe9bhKqZUz0MTwmAHC">
+        <h3 class="capability__heading" data-page-node-id="tb0CRDfAOhUZbLoQ9PXDqq">
+          <button class="capability__trigger" type="button"
+                  aria-expanded="false" aria-controls="cap-panel-3" id="cap-trigger-3" data-page-node-id="FKx3vYDDysOxYnctS3RAKe">
+            <span class="capability__index" aria-hidden="true" data-page-node-id="LaWBXfCDfsqqqEn0tlCCRn">03</span>
+            <span class="capability__title" data-page-node-id="FBQcKVXnsUQzzH9fjoCck1">Web platforms</span>
+            <span class="capability__summary" data-page-node-id="wp8xehE0tJ5a7GGz5EWl8a">Sites and customer portals that load fast and convert.</span>
+            <span class="capability__toggle" aria-hidden="true" data-page-node-id="MPnB4webPppUh5kDeX1kW8"><i data-page-node-id="JxFL3P5X2CBSfkU65GD3p8"></i><i data-page-node-id="uQXaOHUCw3VEkZVEwv4dVN"></i></span>
+          </button>
+        </h3>
+        <div class="capability__panel" id="cap-panel-3" role="region" aria-labelledby="cap-trigger-3" data-page-node-id="soWEYm5SqHmMu9j85eFQnU">
+          <div class="capability__panel-inner" data-page-node-id="Pmn3hTT7Tc0CZhgvvYPiUU">
+            <p data-page-node-id="mPWoCvH4u4yDgSCV6jCh0z">
+              Corporate sites, landing pages, and customer portals with the accessibility and
+              performance budgets a public product needs. Built to be edited later, not rebuilt.
+            </p>
+            <p class="capability__subhead" data-page-node-id="1XEXLkofFtOh3e7OOVzTte">Included</p>
+            <ul class="check-list" data-page-node-id="2VAIxyNzOUyeFEpeysx35b">
+              <li data-page-node-id="mKbTQzM8les7i6FlUi8Go1">Marketing sites and landing pages</li>
+              <li data-page-node-id="S9wwH0JlYqrv6Huv3eeDj7">Customer and partner portals</li>
+              <li data-page-node-id="BN8P5cg8LR45CfXVs6a5tD">Design systems and component libraries</li>
+              <li data-page-node-id="AwjigDgmoJkcZUFPdlVFSn">Performance and accessibility budgets</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="capability" data-page-node-id="19UyRfmC8JsFyosDOAV1bE">
+        <h3 class="capability__heading" data-page-node-id="2GGHFHBU7XwjOR0WCAukE5">
+          <button class="capability__trigger" type="button"
+                  aria-expanded="false" aria-controls="cap-panel-4" id="cap-trigger-4" data-page-node-id="4LpiSFFGOpVMaGpsgLmvQN">
+            <span class="capability__index" aria-hidden="true" data-page-node-id="hE7Mo8kZzj7eTq8JYVNQ7r">04</span>
+            <span class="capability__title" data-page-node-id="fLh5RMKi6481ivvNPcGgko">Integrations and automation</span>
+            <span class="capability__summary" data-page-node-id="cSjApSHDZVh3b9ftKkAZbf">Connect the tools you already run so data moves on its own.</span>
+            <span class="capability__toggle" aria-hidden="true" data-page-node-id="hqFiCNt23aBZ1en669W7VB"><i data-page-node-id="U6jGUnbBnICkudv6ahcfYT"></i><i data-page-node-id="JimKXcHeqfHiBU6UgSGmpP"></i></span>
+          </button>
+        </h3>
+        <div class="capability__panel" id="cap-panel-4" role="region" aria-labelledby="cap-trigger-4" data-page-node-id="nfOnYjYwBpEQEnHrSoeD05">
+          <div class="capability__panel-inner" data-page-node-id="gzaW2znBOZPssVKMVhuCip">
+            <p data-page-node-id="IIGSS8ucjq0NtuCJDNp4l8">
+              Most teams lose hours a day moving data between systems that should already talk
+              to each other. We close those gaps and keep them closed.
+            </p>
+            <p class="capability__subhead" data-page-node-id="ajjJRquhC1K4k6bEQFuA4e">Included</p>
+            <ul class="check-list" data-page-node-id="vJA9gsQZUNaU95ZmsjhZFB">
+              <li data-page-node-id="DGfuBOUvm2ocvAATzPQDmW">Third-party and internal API integrations</li>
+              <li data-page-node-id="mCmWIuxZqZ9C96b6wo1edJ">Webhooks and event-driven sync</li>
+              <li data-page-node-id="oFlaFmnL7hU5goyVl5VvHP">WhatsApp CRM and messaging pipelines</li>
+              <li data-page-node-id="RnH4f7GZsisI59IDw4FvQT">Scheduled jobs and error monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. PROCESS
+     ============================================================ -->
+<section class="section" id="process" aria-labelledby="process-title" data-page-node-id="RlxElxPC18jeHFFEbcKGiQ">
+  <div class="container" data-page-node-id="JdUlUGOhaGMt0z8DaNzlH2">
+    <div class="section-header section-header--stack" data-reveal data-page-node-id="fx1nNeug5yKapiuTqcgNA8">
+      <div class="section-header__label" data-page-node-id="kjHQOh98ef4TchZPBAPBnd">
+        <span class="index" aria-hidden="true" data-page-node-id="ESU4Y4zB1F9nNNUPixx3YO">02</span>
+        <span class="label" data-page-node-id="qBEglcxwL0NOYMdguYJz5O">Process</span>
+      </div>
+      <div class="section-header__body" data-page-node-id="6B6fUAdODaawuuYkjfIqbI">
+        <h2 id="process-title" data-page-node-id="Iadi81AlG0TaFXGm6cMjWa">From brief to running system</h2>
+        <p class="lead" data-page-node-id="l4MUY6ZTSiylTcOaAkNutx">
+          Three phases, each ending with something you can see and use. No phase ends on a slide.
         </p>
       </div>
+    </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        
-        <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-3">Professional Web</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            High-performance corporate websites, customized landing pages, and responsive web platforms built for optimal user conversion.
+    <ol class="timeline" data-reveal data-page-node-id="7lbuXz8u0n0f72PqsvRNJp">
+      <li class="phase" data-page-node-id="9dhHgIMj1Zidd6ioYtKyGl">
+        <span class="phase__node" aria-hidden="true" data-page-node-id="isDdZDljXzP7WOWPUURPlK"></span>
+        <div class="phase__body" data-page-node-id="mxK72SF1q3bVGb8Z8q6uGB">
+          <span class="phase__index" aria-hidden="true" data-page-node-id="QTBBtDnACjWUISRuw0gGPZ">Phase 01</span>
+          <h3 class="phase__title" data-page-node-id="G3I5waoTzRHkdha24DEHIG">Discovery and blueprint</h3>
+          <p class="phase__text" data-page-node-id="lhf9ZO0QErplRN2eUbNgOi">
+            We map the systems you run today, find where work gets stuck, and agree on the
+            architecture before any code is written.
           </p>
+          <p class="phase__subhead" data-page-node-id="DLfBXoQmUvBDNefjCDwW89">You get</p>
+          <ul class="phase__artifacts" data-page-node-id="zVR80U8QkEY3AeHRUilJaT">
+            <li data-page-node-id="IDu9o2LGUY5qjrbBwjf8ID">System map</li>
+            <li data-page-node-id="YB0FSxMJGgwE5EUUEdTZWg">Architecture decisions</li>
+            <li data-page-node-id="0UTs27HyDywp8rWAsP4Ykv">Delivery plan</li>
+          </ul>
         </div>
+      </li>
 
-        <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-3">AI Solutions & Tools</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            Integration of autonomous AI agents, machine learning pipelines, and smart automation modules directly into your existing software stack.
+      <li class="phase" data-page-node-id="ZMknNtDLgStXG83n0FlK5F">
+        <span class="phase__node" aria-hidden="true" data-page-node-id="eToKmqVofNmUj4rvPUP88p"></span>
+        <div class="phase__body" data-page-node-id="Gu4wRHaW2CQuQs4kOxGl1G">
+          <span class="phase__index" aria-hidden="true" data-page-node-id="jT9Cnjw3T0E9DSqGTXI4th">Phase 02</span>
+          <h3 class="phase__title" data-page-node-id="fNh2nWWc1BXzYBqDJmAk4k">Build in sprints</h3>
+          <p class="phase__text" data-page-node-id="i3sA0lVjgomZJFn8yDP3GM">
+            Two-week sprints, each ending with a working build on staging. You review the real
+            thing and redirect while redirecting is still cheap.
           </p>
+          <p class="phase__subhead" data-page-node-id="aEXDMiEBaFgtCpbZky38Bh">You get</p>
+          <ul class="phase__artifacts" data-page-node-id="W8QV4yiBw7rUa2KNxY6LGA">
+            <li data-page-node-id="vOq43cTRbnrjlEgG3GGiq4">Staging build</li>
+            <li data-page-node-id="w1N9OuqAjRyCL1xhHRiw99">Sprint demo</li>
+            <li data-page-node-id="MCZhl1KiIYfZDrUdfBsqAA">Updated backlog</li>
+          </ul>
         </div>
+      </li>
 
-        <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-3">Custom Software Development</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            Custom backend API systems, control dashboards, management portals, and technical systems engineered for your specific operations.
+      <li class="phase" data-page-node-id="DFwGFz933wy9GLOLIv1QTa">
+        <span class="phase__node" aria-hidden="true" data-page-node-id="79fkrUsFp6OgkC4eVr2xvI"></span>
+        <div class="phase__body" data-page-node-id="lFIP0AqJ5AjbJe51px4kTv">
+          <span class="phase__index" aria-hidden="true" data-page-node-id="Dwy372CK1p6mzIHHcvOUCV">Phase 03</span>
+          <h3 class="phase__title" data-page-node-id="1xXPlHRCgpATUkEIL7vp6O">Deploy and hand over</h3>
+          <p class="phase__text" data-page-node-id="fFvZjwTXJC2KWtj2rkAwzB">
+            We ship to your infrastructure, set up monitoring and backups, and train your team on
+            what we built. Then we step back.
           </p>
+          <p class="phase__subhead" data-page-node-id="8HMhvhmaSWT5naXTiYsdmS">You get</p>
+          <ul class="phase__artifacts" data-page-node-id="Qii6EU3GeCFyKFTxeYxMCF">
+            <li data-page-node-id="Du13doCod6NjzTX2VPxyNp">Production deployment</li>
+            <li data-page-node-id="Ag1lUIyWpEyMYXqZblDD0L">Monitoring and alerts</li>
+            <li data-page-node-id="RXIjyWeMQgpmznqOl8Ht8j">Backup policy</li>
+            <li data-page-node-id="DzkWmJDea0DzSXA6FQBbzV">Handover session</li>
+          </ul>
         </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-        <div class="level-2-card p-8 rounded-lg">
-          <div class="w-10 h-10 bg-sky-100 text-sky-700 rounded flex items-center justify-center mb-6">
-            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-3">Integration & Automation</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            Seamless data synchronization, webhook triggers, WhatsApp CRM pipeline integrations, and direct third-party API hookups.
-          </p>
-        </div>
-
+<!-- ============================================================
+     5. STUDIO
+     ============================================================ -->
+<section class="section section--alt" id="studio" aria-labelledby="studio-title" data-page-node-id="5hr8tkvryYhrKKc4sEaUry">
+  <div class="container" data-page-node-id="CkZVd5JaxYaDE6DZknyiYt">
+    <div class="section-header section-header--split" data-reveal data-page-node-id="Yc2oyciZ81FTfsvXRR5eod">
+      <div class="section-header__label" data-page-node-id="cOW4f3nbg4BJYM5ZDguZlS">
+        <span class="index" aria-hidden="true" data-page-node-id="eDiULV3osHXdbc9uQSGpIf">03</span>
+        <span class="label" data-page-node-id="nGtJZU5NNPMwLSD6MoUUpv">Studio</span>
+      </div>
+      <div class="section-header__body" data-page-node-id="Ftz1IMCL9f1KVxYCfIsaR4">
+        <h2 id="studio-title" data-page-node-id="WhVZpz6QZd14z2RQtwFXwR">An engineering team, not a reseller</h2>
       </div>
     </div>
-  </section>
 
-  <!-- Process Section -->
-  <section id="process" class="py-24 bg-[#f8fafc] border-b border-sky-100">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="max-w-2xl mb-20">
-        <span class="text-xs font-semibold tracking-widest text-sky-600 uppercase mb-4 block font-mono-geist">METHODOLOGY</span>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4">
-          Transparent, Sprint-Based Delivery Pipeline
-        </h2>
-        <p class="text-slate-600 leading-relaxed">
-          How we take your product requirements from absolute zero to a stable, running system.
+    <div class="studio" data-page-node-id="C9KwDWSrTyxtQMnxyapXiN">
+      <div class="studio__narrative" data-reveal data-page-node-id="iFzZ0O4vTCQFXazC0FMIvT">
+        <p data-page-node-id="gsRznVzh5HGMIQV8EdTXt8">
+          Arstech exists to remove the integration delays and platform complexity that slow
+          growing businesses down. We are a small team of software engineers and system
+          architects, and we stay close to the work.
         </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white border border-sky-200 p-8 rounded-lg shadow-sm">
-          <div class="text-2xl font-extrabold text-sky-200 font-mono-geist mb-4">01</div>
-          <h3 class="text-base font-semibold text-slate-900 mb-2">Discovery & Blueprint</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            We map your existing systems, extract bottlenecks, and deliver a detailed software architecture roadmap before coding begins.
-          </p>
-        </div>
-        <div class="bg-white border border-sky-200 p-8 rounded-lg shadow-sm">
-          <div class="text-2xl font-extrabold text-sky-600 font-mono-geist mb-4">02</div>
-          <h3 class="text-base font-semibold text-slate-900 mb-2">Iterative Sprints</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            Active agile sprints with demo calls and staging updates every two weeks, ensuring full alignment with your team.
-          </p>
-        </div>
-        <div class="bg-white border border-sky-200 p-8 rounded-lg shadow-sm">
-          <div class="text-2xl font-extrabold text-sky-600 font-mono-geist mb-4">03</div>
-          <h3 class="text-base font-semibold text-slate-900 mb-2">Secure Deployment</h3>
-          <p class="text-slate-600 text-xs leading-relaxed">
-            Deployment of isolated Docker stacks, health-check monitoring setup, database backups, and handover training.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-24 bg-white border-b border-sky-100">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-7">
-        <span class="text-xs font-semibold tracking-widest text-sky-600 uppercase mb-4 block font-mono-geist">ABOUT US</span>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
-          Engineering Teams Built to Innovate
-        </h2>
-        <p class="text-slate-600 leading-relaxed mb-6 text-sm">
-          Arstech was founded to solve technology integration delays and platform complexity. With a specialized team of software engineers and system architects, we prioritize code cleanliness, system robustness, and high-performance infrastructure.
+        <p data-page-node-id="l8uLinee2PIoNs2nf6BVPC">
+          We care about three things: code your next engineer can read, systems that hold under
+          load, and infrastructure that does not need babysitting.
         </p>
-        <div class="grid grid-cols-2 gap-8 border-t border-sky-100 pt-8">
-          <div>
-            <div class="text-2xl font-extrabold text-slate-900 font-mono-geist">100%</div>
-            <p class="text-[10px] text-slate-500 font-mono-geist uppercase mt-2">Delivery Rate</p>
-          </div>
-          <div>
-            <div class="text-2xl font-extrabold text-slate-900 font-mono-geist">24/7</div>
-            <p class="text-[10px] text-slate-500 font-mono-geist uppercase mt-2">Host Monitoring</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="md:col-span-5 bg-sky-50 border border-sky-100 p-8 rounded-2xl">
-        <span class="text-xs font-semibold text-sky-700 font-mono-geist uppercase block mb-6">TECHNICAL CAPABILITIES</span>
-        <ul class="space-y-4">
-          <li class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
-            <span class="text-xs font-semibold text-slate-800 font-mono-geist">Backend: Go / Gin / REST API</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
-            <span class="text-xs font-semibold text-slate-800 font-mono-geist">Frontend: NextJS / TailwindCSS</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
-            <span class="text-xs font-semibold text-slate-800 font-mono-geist">AI Layers: LangChain / OpenAI APIs</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
-            <span class="text-xs font-semibold text-slate-800 font-mono-geist">Infrastructure: Docker / Traefik / Dokploy</span>
-          </li>
+
+        <p class="studio__subhead" data-page-node-id="Pp3wwPUT9neoQv7PKONi35">How we work</p>
+        <ul class="principles" data-page-node-id="yo5xcVoggXrmIehK60Lv2d">
+          <li data-page-node-id="IGbUxGsKBmvtorjon9bExe">We write code your next engineer can read.</li>
+          <li data-page-node-id="mkP0ky4FzM4DqfcHP9eHId">We ship to staging early and often, so you see progress.</li>
+          <li data-page-node-id="L3TSYNEoCllVB0yAfGvNfz">We hand over running systems and documentation, not a dependency.</li>
         </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA / Contact Section -->
-  <section id="contact" class="py-24 bg-sky-700">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <span class="text-xs font-semibold tracking-widest text-sky-200 uppercase mb-4 block font-mono-geist">GET STARTED</span>
-      <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
-        Ready to Move Your Business Forward?
-      </h2>
-      <p class="text-sky-100 text-base leading-relaxed mb-10 max-w-[60ch] mx-auto">
-        Schedule a discovery session. No obligations. We will map out a custom implementation blueprint for you.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="mailto:info@arstech.my.id" class="bg-white hover:bg-slate-100 text-sky-800 font-medium text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          Email Us
-        </a>
-        <a href="https://wa.me/62812345678" class="bg-sky-800 hover:bg-sky-900 text-white font-medium text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          WhatsApp Us
-        </a>
+      <div class="studio__stack" data-reveal data-reveal-delay="1" data-page-node-id="HsnQiRToXl54sAB313aF5V">
+        <div class="panel" data-page-node-id="0Ah7xOxs6sotHSanVXxxJE">
+          <p class="panel__label" data-page-node-id="Hhv4KlAEq9FtY28XCjNqpH">Technical stack</p>
+          <dl class="stack" data-page-node-id="ApXse34gzKK6oJKgqG11vO">
+            <div class="stack__row" data-page-node-id="vDCGJeOFD1aBXmz2oOoNxW">
+              <dt data-page-node-id="W8ROfsXfaNTQ4G3Q5Rs55T">Backend</dt>
+              <dd data-page-node-id="FcttFuKFSg6sqyGTg2Vsrm">Go, Gin, REST APIs</dd>
+            </div>
+            <div class="stack__row" data-page-node-id="hAwsrZHQNmbDjicRHsHQZx">
+              <dt data-page-node-id="jNrsucIooPMgHksBBRW4to">Frontend</dt>
+              <dd data-page-node-id="5PT7WobtlLAL3yCESKyiRs">Next.js, Tailwind CSS</dd>
+            </div>
+            <div class="stack__row" data-page-node-id="w1kSMacxMC38OTKspGPOGO">
+              <dt data-page-node-id="PhqxHO7TL79vJIjYnLc2h6">AI</dt>
+              <dd data-page-node-id="g9y8TSi2gxW76hbYtFXn39">LangChain, OpenAI APIs</dd>
+            </div>
+            <div class="stack__row" data-page-node-id="0lmpUxzYcVBO4BZFzaNYDm">
+              <dt data-page-node-id="2Jh6tFJINJdLwL8JR7eZyr">Infrastructure</dt>
+              <dd data-page-node-id="yQvoa7oWOiUO4t5Js02ilf">Docker, Traefik, Dokploy</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-sky-950 py-12 text-sky-300/70 border-t border-sky-900">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-2">
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 14C4 10 7 10 16 10C25 10 28 10 28 14H4Z" fill="#38bdf8"/>
-          <path d="M6 14H26V18C26 22 22 26 16 26C10 26 6 22 6 18V14Z" fill="#38bdf8" fill-opacity="0.85"/>
+<!-- ============================================================
+     6. CLIENTS (hidden for now, kept in place, not deleted)
+     To re-enable:
+       1. remove the `hidden` attribute from the <section> below
+       2. renumber the Contact section index back from 04 to 05
+     ============================================================ -->
+<section hidden class="section section--tight" id="clients" aria-labelledby="clients-title" data-page-node-id="z93sQN51yRgNSD48GoZilb">
+  <div class="container" data-page-node-id="xDzQdnkUNiF7etvJqMa72R">
+    <div class="clients" data-reveal data-page-node-id="oTkvxaEeX4gaOetvjWtB1o">
+      <div class="clients__head" data-page-node-id="xGG2Mxum3328qzhYMVrxUO">
+        <span class="index" aria-hidden="true" data-page-node-id="jP4Tb2b90XO35gIFNfSiXb">04</span>
+        <h2 id="clients-title" class="clients__title" data-page-node-id="CFhLaJyc9hD6QZviG0L6X1">Teams we build for</h2>
+      </div>
+      <!-- TODO: replace each slot below with a real, linked client name or logo. -->
+      <ul class="clients__grid" aria-label="Client placeholders" data-page-node-id="y7wuh53iWEmYyLEW2fUAfs">
+        <li class="client-slot" data-page-node-id="MnLnUWXZ5hLQR48pti0Z1L"><span data-page-node-id="LeyGPIYG9PJzm6NGIoa9oL">[CLIENT]</span></li>
+        <li class="client-slot" data-page-node-id="DdBRpKAoJi5bPNfyQgpZ0f"><span data-page-node-id="HJ37zGrn8EgzXkYngB8VVe">[CLIENT]</span></li>
+        <li class="client-slot" data-page-node-id="ExSPlscPBEiBDyUtiAynQB"><span data-page-node-id="yYo6ILPS8WNviOAVTxkX7K">[CLIENT]</span></li>
+        <li class="client-slot" data-page-node-id="dFbCUAmsRSJMUwpbvAoVn4"><span data-page-node-id="Y0LtCMwCyN4ZyBeDYQqA1u">[CLIENT]</span></li>
+        <li class="client-slot" data-page-node-id="StGeZJKaQb1JhuJKZcKO65"><span data-page-node-id="1pK9AyFXG9QUksaxkhoYFC">[CLIENT]</span></li>
+      </ul>
+      <p class="clients__note" data-page-node-id="CuduwwhibdY4tEp9tSSOmF">Client logos to be added.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. CONTACT
+     ============================================================ -->
+<section class="section section--dark" id="contact" aria-labelledby="contact-title" data-page-node-id="pBbEinjiKJqfc3GxI0fO0L">
+  <div class="container" data-page-node-id="Xcbkh504Ti9bjsXyGZAmSY">
+    <div class="section-header section-header--stack section-header--on-dark" data-reveal data-page-node-id="4GHRliEAEZBaHkVVaJnwzs">
+      <div class="section-header__label" data-page-node-id="Yw3dutLTiNgVF7iuSAjBkl">
+        <span class="index" aria-hidden="true" data-page-node-id="RFgAlBhkHelSf8qYxivCAz">04</span>
+        <span class="label" data-page-node-id="loDg2APlDuDl2kjOlZsMyr">Contact</span>
+      </div>
+      <div class="section-header__body" data-page-node-id="omEZgAfXspRqAuZB3jpArc">
+        <h2 id="contact-title" data-page-node-id="nHc0oBby08qlwbFymz5wuy">Tell us what you need to build</h2>
+        <p class="lead" data-page-node-id="4J7auQRQAoORbO502Bj0BN">
+          Send a short brief. We reply within one business day with next steps and an honest
+          read on scope.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact" data-reveal data-page-node-id="eFr87do0LlbMJQ8nMY3VMp">
+      <form class="contact-form" id="contact-form" novalidate data-page-node-id="CC5RgAvwRBYgBa6u0PPggB">
+        <div class="field" data-page-node-id="QpOUt4lGRXj7LsHwnljCX7">
+          <label class="field__label" for="cf-name" data-page-node-id="Z3mpHSIBkkTJqMP54F4U4k">Name <span class="field__req" data-page-node-id="UpdC0SjTkso7v5R5rTV5VB">Required</span></label>
+          <input class="input" type="text" id="cf-name" name="name" autocomplete="name"
+                 required aria-describedby="cf-name-error" data-page-node-id="tLR2baGXSqQXIzaqLr16Ab">
+          <p class="field__error" id="cf-name-error" hidden data-page-node-id="3yVoiSPuNSGFWyneiOYQzM"></p>
+        </div>
+
+        <div class="field" data-page-node-id="cblcAOtGcjMRLV28vkM0Mg">
+          <label class="field__label" for="cf-email" data-page-node-id="FJF9nmFgKBggpFc20BjNiU">Email <span class="field__req" data-page-node-id="NTF3cWsPUXTS5s0u9qRORW">Required</span></label>
+          <input class="input" type="email" id="cf-email" name="email" autocomplete="email"
+                 required aria-describedby="cf-email-error" data-page-node-id="6eMi25ZYl4778Q7qaJCltF">
+          <p class="field__error" id="cf-email-error" hidden data-page-node-id="wo6FwkyVzJCklLUj3G7UP1"></p>
+        </div>
+
+        <div class="field" data-page-node-id="zMb925j1FqE3a6OGT4inOS">
+          <label class="field__label" for="cf-company" data-page-node-id="x8o3v1TcXipZMZyg8Diqkg">Company</label>
+          <input class="input" type="text" id="cf-company" name="company" autocomplete="organization" data-page-node-id="td6RZn11gWTNzpJOpmvCOF">
+        </div>
+
+        <div class="field" data-page-node-id="mxu8FJHFWKGo039GJtLbMC">
+          <label class="field__label" for="cf-type" data-page-node-id="YH1Gsxg4VL3TKMgdLmjaQQ">What do you need?</label>
+          <select class="input input--select" id="cf-type" name="projectType" data-page-node-id="ZszWZ2oH7HXjDYPCSbHWo0">
+            <option value="Custom software" data-page-node-id="36WGcfhNH8P8Es0Aqr7C8w">Custom software</option>
+            <option value="AI system" data-page-node-id="WZbwoAQK9tl7mCUA0uuInm">AI system</option>
+            <option value="Web platform" data-page-node-id="fbaHib8gkfBxGSsANwFvOM">Web platform</option>
+            <option value="Integration or automation" data-page-node-id="2UIeFJZOMl8eJtscD0b4JX">Integration or automation</option>
+            <option value="Not sure yet" data-page-node-id="4mRI9kWr9KVYac9PtD3U9c">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field field--full" data-page-node-id="OINoQbSA9tUDth3Edpbsjd">
+          <label class="field__label" for="cf-message" data-page-node-id="ePEkZpeBzcJ8zy3QDSGxWN">Brief <span class="field__req" data-page-node-id="7L2SysaYCLgXU2guTQ1Hto">Required</span></label>
+          <textarea class="input input--textarea" id="cf-message" name="message" rows="5"
+                    required aria-describedby="cf-message-error"></textarea>
+          <p class="field__help" data-page-node-id="IF6NF49YVS9qcOJCCLtNr1">What are you trying to build, and what is getting in the way?</p>
+          <p class="field__error" id="cf-message-error" hidden data-page-node-id="q7uLDu2u4UFhRZEouKxtvU"></p>
+        </div>
+
+        <div class="field field--full field--check" data-page-node-id="TwFVOeNAh3hTHyDwGJKDSx">
+          <input class="checkbox" type="checkbox" id="cf-consent" name="consent"
+                 required aria-describedby="cf-consent-error" data-page-node-id="YJ2u5UGYE9cGebhOoYfFVK">
+          <label class="checkbox__label" for="cf-consent" data-page-node-id="WEITWlSs1VSYX7RiaJlA7f">I agree to be contacted about this enquiry.</label>
+          <p class="field__error" id="cf-consent-error" hidden data-page-node-id="EYbIuclD6ZBZVSQh07eCnE"></p>
+        </div>
+
+        <div class="contact-form__actions field--full" data-page-node-id="wANk83U0gyLNTXGUup3ytG">
+          <button class="btn btn--on-dark btn--lg" type="submit" id="cf-submit" data-page-node-id="2nvJHTnCLYg8AXv2vs7kaO">
+            <span class="btn__label" data-page-node-id="DCOxU466MHESmu6ZIIO8zW">Send the brief</span>
+          </button>
+          <p class="contact-form__hint" data-page-node-id="6tPNLbDZyUZvD3k2ppJhrz">Opens your email client with the details filled in.</p>
+        </div>
+
+        <div class="form-status field--full" id="cf-status" role="status" aria-live="polite" hidden data-page-node-id="3Va2dosaSYmIfz0Gp9JAFQ"></div>
+      </form>
+
+      <aside class="contact__direct" data-page-node-id="nY08dx1BXrmI6Z24XVmx0p">
+        <p class="contact__direct-label" data-page-node-id="gdMThYjABsVCCQWWYq7zh9">Or reach us directly</p>
+        <a class="contact__channel" href="mailto:info@arstech.my.id" data-page-node-id="N5XgIbpFYmF1b6nVYO8hCB">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-page-node-id="mYmep9lslwLTIOURzZTEiw">
+            <rect x="3" y="5" width="18" height="14" rx="2" data-page-node-id="njmUT7HMBEoYb1RIgEXFGI"></rect>
+            <path d="M3.5 6.5 12 13l8.5-6.5" data-page-node-id="DbY7q65P7zLU9h3FOtACLn"></path>
+          </svg>
+          <span data-page-node-id="Hc2jvjkEWPokEueE7SEQzm">info@arstech.my.id</span>
+        </a>
+        <!-- TODO: replace 62812345678 with the real business WhatsApp number. -->
+        <a class="contact__channel" href="https://wa.me/62812345678" target="_blank" rel="noopener" data-page-node-id="GPxexCrB65vjK0RnBveBPI">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" data-page-node-id="wVQfBWuaGTqlOk6HcrKIE9">
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.35 8.5 8.5 0 0 1-3.4-.7L3 21l1.9-5.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5Z" data-page-node-id="Ozrq4ZhBF62EbtDXE7ouRk"></path>
+          </svg>
+          <span data-page-node-id="fVImrsfrLmi2DDvm5Q9UZo">WhatsApp</span>
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     8. FOOTER
+     ============================================================ -->
+<footer class="footer" data-page-node-id="ezaFREwDwHE3C6Vn4fiitV">
+  <div class="container footer__inner" data-page-node-id="xMKzb0EnxSO2nvUFHF7hft">
+
+    <div class="footer__brand" data-page-node-id="nBhf5gVL3m6xSWFxLuAHpm">
+      <a class="logo logo--full logo--reversed" href="#top" aria-label="Arstech, home" data-page-node-id="KKaUi8EFjJJDtxwWHiOK6i">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false" data-page-node-id="bqyeM63SC4lrs8kn6pMfsl">
+          <path d="M16 3.5 L29.5 28.5 H22.6 L16 15.3 L9.4 28.5 H2.5 Z" data-page-node-id="lsg9infDsi5BZTGC4lsSt6"/>
+          <rect x="10.6" y="21.2" width="10.8" height="3.2" rx="0.4" data-page-node-id="OQrPbviWbSwbd6yYJpL5hw"/>
         </svg>
-        <span class="text-sm font-bold text-white font-mono-geist">ARSTECH</span>
-      </div>
-      <p class="text-xs">&copy; 2026 Arstech. All Rights Reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="https://www.instagram.com/arstechid/" class="text-sky-300/60 hover:text-white transition"><i class="fab fa-instagram" style="font-size:1rem;"></i></a>
-        <a href="#" class="text-sky-300/60 hover:text-white transition"><i class="fab fa-whatsapp" style="font-size:1rem;"></i></a>
-      </div>
+        <span class="logo__word" data-page-node-id="2isRWWRXGKpXrULsFfNJby">Arstech</span>
+      </a>
+      <p class="footer__tagline" data-page-node-id="Y56nDQLdVpvmqB4cdvBewy">Built to Innovate.</p>
     </div>
-  </footer>
 
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <nav class="footer__nav" aria-label="Footer" data-page-node-id="agAJhbJFDgA2JMx5KYZusj">
+      <p class="footer__heading" data-page-node-id="eKeuY9pQZ2ExAPWUoHOWCq">Navigate</p>
+      <ul data-page-node-id="SHkDNU0YL5PbQIrOKB5YLC">
+        <li data-page-node-id="QlQUZrfzlKpH3ffCLeHZi0"><a href="#capabilities" data-page-node-id="lHR0dwuLxuzpQHosr11Wir">Capabilities</a></li>
+        <li data-page-node-id="5wabJBF0noBgF0Lxy3S1Ac"><a href="#process" data-page-node-id="r07kISppKEBnwoLFvNvxEB">Process</a></li>
+        <li data-page-node-id="F5w54e1ibwpq4mrCFkpBgN"><a href="#studio" data-page-node-id="eRqQf5KrW8jmpsU42qaOkc">Studio</a></li>
+        <li data-page-node-id="6uYaqaclSYyp4hk5BLo6C3"><a href="#contact" data-page-node-id="Q6i2EwqODFMDqNyvCrZBty">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__talk" data-page-node-id="1WStDjJAN5oplanJGbzKLp">
+      <p class="footer__heading" data-page-node-id="ipCmEx6tClQBLZ0Yn6oYxj">Talk</p>
+      <ul data-page-node-id="tbonkZbu5S9xZEzVA4g7yT">
+        <li data-page-node-id="SsAOI5iFsM3I3USIvLb0qM"><a href="mailto:info@arstech.my.id" data-page-node-id="6Nve9wi10DfHwVY810tcMQ">info@arstech.my.id</a></li>
+        <li data-page-node-id="9YQ3D5l3G8JmjqxiQCJTG3"><a href="https://www.instagram.com/arstechid/" target="_blank" rel="noopener" data-page-node-id="p9Atiw635tArAnOCHlzrlF">Instagram</a></li>
+        <!-- TODO: replace 62812345678 with the real business WhatsApp number. -->
+        <li data-page-node-id="v3RBDuaAyreoDUbY0jYEcs"><a href="https://wa.me/62812345678" target="_blank" rel="noopener" data-page-node-id="JnTgpi2EnVFfiBRy1vuThj">WhatsApp</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="container footer__bottom" data-page-node-id="JysQ7hAyqurrBZ9HIwjuty">
+    <p data-page-node-id="p6Vq1VxmBmWiuV4rDCvKd4">&copy; 2026 Arstech. All rights reserved.</p>
+    <a class="footer__top" href="#top" data-page-node-id="oXO4UCkveT3GvZgVX295QE">Back to top</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
