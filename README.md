@@ -20,13 +20,13 @@ npm test
 npm run check
 ```
 
-Playwright starts a local server when one is not already running. Tests cover five viewport widths, accessible ASCII sculptures, animation pausing and resuming, mobile navigation, service selection, sticky previews and scroll activation in both directions, contact validation and draft contents, automatic illustration loops, reduced motion, JavaScript-disabled fallbacks, and nested article assets.
+Playwright starts a local server when one is not already running. Tests cover five viewport widths, volumetric icon geometry, accessible ASCII sculptures, animation pausing and resuming, mobile navigation, service selection, sticky previews and scroll activation in both directions, contact validation and draft contents, automatic illustration loops, reduced motion, JavaScript-disabled fallbacks, and nested article assets.
 
 ## Redesign
 
 The `redesign/arstech-studio` branch is based on `arstech`. The base stylesheet remains in `assets/css/styles.css`; `assets/css/studio.css` defines the revised typography, layout, diagram, and motion. Interactions remain dependency-free in `assets/js/main.js`. Manrope is self-hosted under the included SIL Open Font License.
 
-`assets/js/ascii.js` renders the enlarged hero orbit, its four orbiting icons, and the process layers as shaded character art. It uses local geometry and Canvas, without Three.js or remote media. The owner selected [OVONE on 21st](https://21st.dev/community/ascii/ovone-57f212a0-1b1b-479a-92b2-40132e966d31) as the visual reference; this implementation uses its own geometry and renderer.
+`assets/js/ascii.js` renders the enlarged hero orbit, its four independently rotating 3D icons, and the process layers as shaded character art. It uses local geometry and Canvas, without Three.js or remote media. The owner selected [OVONE on 21st](https://21st.dev/community/ascii/ovone-57f212a0-1b1b-479a-92b2-40132e966d31) as the visual reference; this implementation uses its own geometry and renderer.
 
 Contact submission opens an email draft. The visitor must send it in their email app. There is no form delivery backend. Placeholder WhatsApp links have been removed from the rendered page.
 

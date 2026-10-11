@@ -42,68 +42,84 @@
 
   function makeComponent(type) {
     var points = [];
-    function line(x1, y1, x2, y2, radius) {
+    var thickness = type === 'ai' ? .22 : .18;
+    var front = thickness / 2 + .015;
+    function line(x1, y1, x2, y2, radius, centerZ, depth) {
       radius = radius || .035;
+      centerZ = centerZ || 0;
+      depth = depth === undefined ? thickness : depth;
       var length = Math.hypot(x2 - x1, y2 - y1);
-      var steps = Math.ceil(length * 100);
+      var steps = Math.ceil(length * 60);
       var nx = -(y2 - y1) / length, ny = (x2 - x1) / length;
       for (var i = 0; i <= steps; i++) {
         var x = x1 + (x2 - x1) * i / steps;
         var y = y1 + (y2 - y1) * i / steps;
-        for (var j = 0; j < 16; j++) {
-          var angle = j / 16 * Math.PI * 2;
-          var r = Math.cos(angle);
-          points.push(x + nx * r * radius, y + ny * r * radius, Math.sin(angle) * radius,
-            nx * r, ny * r, Math.sin(angle));
+        for (var j = 0; j <= 4; j++) {
+          var r = (j / 4 * 2 - 1) * radius;
+          points.push(x + nx * r, y + ny * r, centerZ + depth / 2, 0, 0, 1);
+          points.push(x + nx * r, y + ny * r, centerZ - depth / 2, 0, 0, -1);
+        }
+        for (var k = 0; k <= 8; k++) {
+          var z = centerZ + (k / 8 - .5) * depth;
+          points.push(x + nx * radius, y + ny * radius, z, nx, ny, 0);
+          points.push(x - nx * radius, y - ny * radius, z, -nx, -ny, 0);
+        }
+      }
+      for (var end = 0; end < 2; end++) {
+        var ex = end ? x2 : x1, ey = end ? y2 : y1;
+        var direction = end ? 1 : -1;
+        for (var u = 0; u <= 4; u++) {
+          for (var v = 0; v <= 8; v++) {
+            var edge = (u / 4 * 2 - 1) * radius;
+            points.push(ex + nx * edge, ey + ny * edge, centerZ + (v / 8 - .5) * depth,
+              (x2 - x1) / length * direction, (y2 - y1) / length * direction, 0);
+          }
         }
       }
     }
-    function rectangle(x, y, width, height) {
-      line(x, y, x + width, y);
-      line(x + width, y, x + width, y + height);
-      line(x + width, y + height, x, y + height);
-      line(x, y + height, x, y);
-    }
-    function ellipse(cx, cy, rx, ry, start, end) {
-      start = start || 0;
-      end = end === undefined ? Math.PI * 2 : end;
-      var steps = Math.ceil((end - start) * 24);
-      for (var i = 0; i < steps; i++) {
-        var a = start + (end - start) * i / steps;
-        var b = start + (end - start) * (i + 1) / steps;
-        line(cx + Math.cos(a) * rx, cy + Math.sin(a) * ry,
-          cx + Math.cos(b) * rx, cy + Math.sin(b) * ry, .03);
-      }
+    function rectangle(x, y, width, height, z, depth) {
+      line(x, y, x + width, y, .035, z, depth);
+      line(x + width, y, x + width, y + height, .035, z, depth);
+      line(x + width, y + height, x, y + height, .035, z, depth);
+      line(x, y + height, x, y, .035, z, depth);
     }
     if (type === 'web') {
       rectangle(-.44, -.32, .88, .64);
-      line(-.44, -.17, .44, -.17);
-      for (var dot = 0; dot < 3; dot++) line(-.33 + dot * .1, -.245, -.31 + dot * .1, -.245, .027);
-      rectangle(-.32, -.04, .25, .22);
-      line(.06, 0, .31, 0);
-      line(.06, .13, .24, .13);
+      line(-.44, -.17, .44, -.17, .025, front, .025);
+      for (var dot = 0; dot < 3; dot++) line(-.33 + dot * .1, -.245, -.31 + dot * .1, -.245, .027, front, .025);
+      rectangle(-.32, -.04, .25, .22, front, .025);
+      line(.06, 0, .31, 0, .025, front, .025);
+      line(.06, .13, .24, .13, .025, front, .025);
     } else if (type === 'ai') {
       rectangle(-.29, -.29, .58, .58);
-      rectangle(-.13, -.13, .26, .26);
+      rectangle(-.13, -.13, .26, .26, .06, .16);
       for (var pin = 0; pin < 3; pin++) {
         var position = (pin - 1) * .18;
-        line(position, -.29, position, -.44);
-        line(position, .29, position, .44);
-        line(-.29, position, -.44, position);
-        line(.29, position, .44, position);
+        line(position, -.29, position, -.44, .035, -.025, .09);
+        line(position, .29, position, .44, .035, -.025, .09);
+        line(-.29, position, -.44, position, .035, -.025, .09);
+        line(.29, position, .44, position, .035, -.025, .09);
       }
     } else if (type === 'data') {
-      ellipse(0, -.28, .33, .11);
-      line(-.33, -.28, -.33, .28);
-      line(.33, -.28, .33, .28);
-      ellipse(0, 0, .33, .11, 0, Math.PI);
-      ellipse(0, .28, .33, .11, 0, Math.PI);
+      for (var layer = 0; layer < 3; layer++) {
+        var cy = (layer - 1) * .23;
+        for (var u = 0; u < 112; u++) {
+          var angle = u / 112 * Math.PI * 2;
+          var ca = Math.cos(angle), sa = Math.sin(angle);
+          for (var v = 0; v <= 20; v++) {
+            var y = cy + (v / 20 - .5) * .19;
+            points.push(.32 * ca, y, .32 * sa, ca, 0, sa);
+            var r = v / 20 * .32;
+            points.push(r * ca, cy - .095, r * sa, 0, -1, 0);
+            points.push(r * ca, cy + .095, r * sa, 0, 1, 0);
+          }
+        }
+      }
     } else {
       rectangle(-.23, -.42, .46, .84);
-      line(-.07, -.31, .07, -.31);
-      line(-.13, -.15, .13, -.15);
-      line(-.13, .02, .08, .02);
-      line(-.06, .3, .06, .3);
+      line(-.07, -.31, .07, -.31, .025, front, .025);
+      rectangle(-.15, -.2, .3, .35, front, .025);
+      line(-.06, .3, .06, .3, .025, front, .025);
     }
     return new Float32Array(points);
   }
@@ -116,10 +132,10 @@
   }
 
   var components = [
-    { type: 'web', phase: -2.85, radius: 2.8, tilt: .65, turn: -.2, depth: -.4, drift: .11 },
-    { type: 'ai', phase: -.65, radius: 2.1, tilt: -.55, turn: .3, depth: .55, drift: .13 },
-    { type: 'data', phase: .72, radius: 2.4, tilt: .48, turn: .4, depth: -.5, drift: .17 },
-    { type: 'mobile', phase: 2.15, radius: 2.45, tilt: -.42, turn: -.25, depth: .45, drift: .09 }
+    { type: 'web', spin: .19, pitch: -.2, yaw: .35, phase: -2.85, radius: 2.8, tilt: .65, turn: -.2, depth: -.4, drift: .11 },
+    { type: 'ai', spin: .16, pitch: .12, yaw: .4, phase: -.65, radius: 2.1, tilt: -.55, turn: .3, depth: .55, drift: .13 },
+    { type: 'data', spin: -.14, pitch: .12, yaw: .4, phase: .72, radius: 2.4, tilt: .48, turn: .4, depth: -.5, drift: .17 },
+    { type: 'mobile', spin: .2, pitch: -.12, yaw: .2, phase: 2.15, radius: 2.45, tilt: -.42, turn: -.25, depth: .45, drift: .09 }
   ].map(function (component) {
     component.model = makeComponent(component.type);
     component.plane = rotation(component.tilt, component.turn, 0);
@@ -200,21 +216,16 @@
         var plane = component.plane;
         var offset = [plane[0] * x + plane[1] * y, plane[3] * x + plane[4] * y,
           plane[6] * x + plane[7] * y + component.depth];
-        var facing = rotation(.12, .22, .03 * Math.sin(angle));
-        var local = new Array(9);
-        for (var row = 0; row < 3; row++) {
-          for (var col = 0; col < 3; col++) {
-            local[row * 3 + col] = matrix[row] * facing[col] + matrix[3 + row] * facing[3 + col] + matrix[6 + row] * facing[6 + col];
-          }
-        }
+        var local = rotation(component.pitch + .18 * Math.sin(t * .23 + component.phase),
+          component.yaw + .6 * Math.sin(t * component.spin + component.phase), .1 * Math.sin(angle));
         var center = project(offset[0], offset[1], offset[2]);
         var distanceScale = (camera - center[2]) / camera;
         var dx = (center[0] - cols / 2) * distanceScale;
         var dy = (center[1] - rows / 2) * distanceScale;
         var radius = Math.hypot(dx / cols, dy / rows);
         var iconScale = .7;
-        var iconRadius = .5 * iconScale * 3.6 / (camera - center[2]) * scale;
-        var availableRadius = .47 - iconRadius;
+        var iconRadius = .55 * iconScale * 3.6 / (camera - center[2]) * scale;
+        var availableRadius = .49 - iconRadius;
         var fit = Math.pow(1 + Math.pow(radius / availableRadius, 8), -1 / 8);
         var shift = [cols / 2 + dx * fit - center[0], rows / 2 + dy * fit - center[1]];
         var opacity = Math.max(.52, Math.min(1, .78 + center[2] * .16));
