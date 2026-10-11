@@ -18,6 +18,19 @@ This is the Arstech design system. It defines how the brand looks, sounds, and b
 
 ---
 
+## Website redesign, October 2026
+
+The marketing website uses a more expressive application of this brand. The blue monogram and connected-system motif remain the identity. On this surface, the following choices supersede the older website typography and motion examples below:
+
+- Self-hosted Manrope variable font, including the website wordmark. Georgia italic supplies emphasis in the hero and contact heading only.
+- Oversized display type, an asymmetric hero, restrained neutral surfaces, and shaded blue ASCII sculptures. The hero uses a three-dimensional orbit; the process introduction uses three stacked layers.
+- Sequenced headline arrival, slow ASCII rotation, and workflow transitions. Scrolling stays native. ASCII animation pauses outside the viewport and in background tabs; reduced motion keeps a static sculpture.
+- No invented customer counts, client logos, or business results. The service workflow is an illustrative example, explicitly labelled as such.
+
+Other brand surfaces may continue to use the original typography rules.
+
+---
+
 ## 1. Brand
 
 ### 1.1 Who Arstech is

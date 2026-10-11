@@ -1,6 +1,24 @@
 # Arstech Website Specification
 
-**Version 2.0** | Implements `design.md` (the Arstech Design System) | Scope: the Arstech marketing website only.
+**Version 3.0** | Implements `design.md` (the Arstech Design System) | Scope: the Arstech marketing website only.
+
+---
+
+## October 2026 implementation update
+
+The source/build architecture below remains unchanged. The current marketing design adds `assets/css/studio.css` after the base stylesheet and applies the website exception in `design.md`.
+
+- Company copy includes the user-supplied two-year history and an explicit mission to become an AI Native Company through research, development, and implementation. This is a direction, not a certification or a claim of completed transformation.
+- The service preview uses four separate HTML illustrations: an operations workspace, a knowledge-to-AI-to-draft flow, a responsive website with a customer enquiry, and an integration network. Service selection switches the composition and its looping animation, as well as the copy. It is not a customer case study or a live operational dashboard.
+- The desktop hero combines a two-line display headline with a blue three-dimensional orbit rendered as shaded ASCII characters, surrounded by orbiting ASCII icons for Web, AI, Data, and Mobile, without visible labels. Each icon follows a different inclined orbit, with varied phases and smooth phase offsets; perspective, fading, and occlusion place icons in front of and behind the enlarged ring. A faint blue ASCII field sits behind the hero sculpture and fades toward the edges, without rectangular icon backgrounds. A smaller three-layer ASCII sculpture fills the process introduction. Both use a local Canvas renderer with static character-art fallbacks. Below 900px the hero stacks and the process sculpture becomes smaller.
+- Selecting a service opens one panel, updates a layered HTML workspace demo, and lets the visitor carry the service into the contact form.
+- At desktop widths, the compact left preview stays sticky while native scrolling activates and expands services 01–04 on the right. Passed services remain expanded; upcoming services stay collapsed until reached. Scrolling back closes upcoming services. Panels use their natural content height with no reserved empty slots. Below 900px, the compact preview and manually selectable accordion stack in normal document flow.
+- Motion includes staggered headline arrival, slow ASCII sculpture rotation, scroll reveals, and workflow transitions. The ASCII renderer updates at most thirty times per second and pauses outside the viewport, in background tabs, and under reduced motion. CSS scroll-driven depth is progressive enhancement. Reduced-motion and no-JavaScript content remain usable.
+- The service animation loops automatically while visible, pauses outside the viewport or in a background tab, and resolves to a static completed illustration under reduced motion. No playback controls or status labels are displayed.
+- The mobile menu contains keyboard focus while open, closes on Escape or navigation, and returns focus to its toggle on Escape.
+- The contact form prepares a `mailto:` draft, preserves the entered brief, and provides a retry link. It does not send a message or claim delivery. Placeholder WhatsApp links are withheld until a real number exists.
+- Shared layout updates apply to all five pages. Metadata, canonical URLs, article content, and structured data remain present.
+- `npm test` runs Playwright regression checks. `npm run check` checks generated-source consistency. Node dependencies are development-only; the production site remains static HTML/CSS/JS behind Nginx.
 
 ---
 
